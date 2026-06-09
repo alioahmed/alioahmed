@@ -1,0 +1,69 @@
+/* Hallmark · tokens.css — portable design system
+ * genre: editorial · theme: Newsprint
+ * axes: paper-band=light · display-style=roman-serif · accent-hue=cool (ink-blue)
+ * Every colour/font/space/text/ease/dur/rule/radius token the build uses lives here.
+ * Page CSS references these by name only — no inline OKLCH/hex.
+ */
+:root {
+  /* ---- Colour (OKLCH; paper + ink tinted warm, accent cool, used <5%) ---- */
+  --color-paper:        oklch(98.5% 0.006 85);   /* warm off-white — base */
+  --color-paper-2:      oklch(96.2% 0.008 85);   /* raised panel */
+  --color-paper-3:      oklch(93.6% 0.010 85);   /* hairline fill / hover */
+  --color-ink:          oklch(24% 0.012 70);     /* warm near-black — primary text */
+  --color-ink-2:        oklch(42% 0.012 70);     /* secondary text */
+  --color-ink-3:        oklch(57% 0.010 70);     /* muted / labels */
+  --color-rule:         oklch(86% 0.012 75);     /* hairlines */
+  --color-rule-strong:  oklch(72% 0.012 75);     /* double-rule / emphasis */
+  --color-accent:       oklch(46% 0.105 250);    /* deep ink-blue */
+  --color-accent-weak:  oklch(92% 0.045 250);    /* accent wash */
+  --color-focus:        oklch(55% 0.15 250);     /* focus ring */
+  --color-ink-line:        oklch(38% 0.012 70);  /* hairline on the dark CTA panel */
+  --color-on-dark-accent:  oklch(75% 0.05 250);  /* accent text on ink */
+  --color-on-dark-line:    oklch(60% 0.05 250);  /* link underline on ink */
+
+  /* ---- Type families (2 + 1) ---- */
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-body:    var(--font-newsreader), Georgia, serif;
+  --font-mono:    var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* ---- Type scale (fluid) ---- */
+  --text-xs:    0.78rem;
+  --text-sm:    0.875rem;
+  --text-base:  1.0625rem;
+  --text-lg:    1.25rem;
+  --text-xl:    clamp(1.5rem, 1.2rem + 1.2vw, 1.95rem);
+  --text-2xl:   clamp(1.9rem, 1.4rem + 2vw, 2.6rem);
+  --text-3xl:   clamp(2.4rem, 1.6rem + 3.2vw, 3.5rem);
+  --text-display-s: clamp(2.6rem, 1.6rem + 4.2vw, 4.4rem);
+  --text-display:   clamp(3.4rem, 2rem + 6vw, 6.5rem);
+
+  /* ---- Spacing (4pt scale) ---- */
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: clamp(3rem, 2rem + 4vw, 4.5rem);
+  --space-3xl: clamp(4.5rem, 3rem + 6vw, 7.5rem);
+  --space-4xl: clamp(6rem, 4rem + 8vw, 10rem);
+
+  /* ---- Lines / radius ---- */
+  --rule-hair: 1px;
+  --rule-bold: 2px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  /* ---- Motion ---- */
+  --ease-out:    cubic-bezier(0.2, 0, 0, 1);
+  --ease-in:     cubic-bezier(0.5, 0, 0.9, 0.4);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-1: 160ms;
+  --dur-2: 320ms;
+  --dur-3: 600ms;
+
+  /* ---- Layout ---- */
+  --measure: 64ch;
+  --page-pad: clamp(1.25rem, 5vw, 4rem);
+  --page-max: 1180px;
+}
