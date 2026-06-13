@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { mail } from "../../lib/site";
+import { mail, book } from "../../lib/site";
 import { work, order } from "../work-data";
 
 export function generateStaticParams() {
@@ -21,35 +21,31 @@ export default async function WorkDetail({ params }) {
   const p = work[slug];
   if (!p) notFound();
 
-  const brand = p.tag.split(" · ")[0];
-
   return (
     <>
       <Header />
       <main>
-        <section className="detail">
-          <div className="wrap">
-            <span className="ghost hero__ghost" aria-hidden="true">{brand}</span>
-            <Link className="detail__back" href="/#work">← All work</Link>
-            <p className="kicker">{p.tag}</p>
-            <h1 className="detail__title">{p.title}</h1>
-            <p className="lede detail__lede">{p.summary}</p>
+        <section className="hero" style={{ paddingBlock: "var(--s-4xl) var(--s-2xl)" }}>
+          <div className="mesh" aria-hidden="true" />
+          <div className="wrap hero__inner" style={{ maxWidth: "56rem" }}>
+            <Link className="back" href="/work">← All work</Link>
+            <span className="eyebrow" style={{ display: "block" }}>{p.tag}</span>
+            <h1 className="t-xl" style={{ margin: "var(--s-md) 0" }}>{p.title}</h1>
+            <p className="hero__sub">{p.summary}</p>
             <div className="detail__meta">
               <span>{p.role}</span>
               <span>{p.period}</span>
-              {p.link && (
-                <a href={p.link.href} target="_blank" rel="noopener noreferrer">{p.link.label} ↗</a>
-              )}
+              {p.link && <a href={p.link.href} target="_blank" rel="noopener noreferrer">{p.link.label} ↗</a>}
             </div>
           </div>
         </section>
 
-        <section className="section">
+        <section className="section section--soft" style={{ paddingBlock: "var(--s-3xl)" }}>
           <div className="wrap">
-            <div className="stats__card">
+            <div className="stats">
               {p.stats.map((s) => (
-                <div className="stat" key={s.num + s.label}>
-                  <div className="stat__num">{s.num}</div>
+                <div key={s.num + s.label}>
+                  <div className="stat__num tnum">{s.num}</div>
                   <div className="stat__label">{s.label}</div>
                 </div>
               ))}
@@ -57,28 +53,30 @@ export default async function WorkDetail({ params }) {
           </div>
         </section>
 
-        {p.sections.map((s, idx) => (
-          <section className={`section ${idx % 2 === 0 ? "section--lifted" : ""}`} key={s.heading}>
+        {p.sections.map((s, i) => (
+          <section className={`section ${i % 2 === 1 ? "section--soft" : ""}`} key={s.heading}>
             <div className="wrap detail__block">
-              <div className="sec-head"><h2>{s.heading}</h2></div>
-              {s.paras && s.paras.map((para, i) => <p className="detail__p" key={i}>{para}</p>)}
+              <h2 className="t-md">{s.heading}</h2>
+              {s.paras && s.paras.map((para, k) => <p className="detail__p" key={k}>{para}</p>)}
               {s.bullets && (
                 <ul className="detail__list">
-                  {s.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                  {s.bullets.map((b, k) => <li key={k}>{b}</li>)}
                 </ul>
               )}
             </div>
           </section>
         ))}
 
-        <section className="cta">
-          <div className="cta__panel">
-            <div className="cta__head">
-              <p className="kicker kicker--ink">Want to go deeper?</p>
-              <h2>Happy to walk you through this.</h2>
-            </div>
-            <div className="cta__primary">
-              <a className="btn btn--invert" href={mail(`About ${p.title}`)}>Get in touch →</a>
+        <section className="section">
+          <div className="wrap">
+            <div className="panel-dark">
+              <div className="panel-dark__glow" aria-hidden="true" />
+              <span className="eyebrow">Want to go deeper?</span>
+              <h2 style={{ marginBottom: "var(--s-lg)" }}>Happy to walk you through this.</h2>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--s-md)" }}>
+                <a className="btn btn--ondark" href={book()}>Book a call</a>
+                <a className="btn btn--secondary" href={mail(`About ${p.title}`)} style={{ background: "transparent", color: "#fff", borderColor: "rgba(255,255,255,0.3)" }}>Email me</a>
+              </div>
             </div>
           </div>
         </section>

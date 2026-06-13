@@ -1,89 +1,76 @@
-/* Hallmark · tokens.css - portable design system
- * SYSTEM: DESIGN.md (inspired by Mastercard) - locked, overrides catalog themes.
- * genre: editorial-institutional · surfaces: canvas cream → lifted cream → ink footer
- * One-font (Sofia Sans) · pill language (20 / 40 / 999) · ink-black CTAs · orange = sparing accent only
- * Page CSS references these by name only.
+/* tokens.css - CUSTOM design system
+ * Base: Apple clean monochrome (white / #f5f5f7 / near-black ink) + a single solid Apple blue accent.
+ * Mixed in: Stripe tabular figures, Linear/Vercel crisp hairlines, Apple huge type + generous whitespace.
+ * Variable NAMES are stable so all page CSS adopts the new look automatically.
  */
 :root {
+  /* ---- Accent (the one solid colour: Apple blue) ---- */
+  --c-primary:        #0071e3;
+  --c-primary-deep:   #0064c8;
+  --c-primary-press:  #00509e;
+  --c-primary-soft:   #2b8aff;
+  --c-primary-subtle: #e9f1fd;   /* pale blue wash */
+  --c-navy-900:       #1d1d1f;    /* near-black panel (Apple ink) */
+
+  /* ---- Ink / text (Apple greys) ---- */
+  --c-ink:        #1d1d1f;
+  --c-ink-2:      #424245;
+  --c-ink-mute:   #6e6e73;
+  --c-on-dark:    #ffffff;
+
   /* ---- Surfaces ---- */
-  --color-canvas:  #F3F0EE;   /* warm putty body canvas - never pure white */
-  --color-lifted:  #FCFBFA;   /* paper-on-paper raised sections */
-  --color-white:   #FFFFFF;   /* nav pill, outlined buttons, chips */
-  --color-bone:    #F4F4F4;   /* cool-gray subregion */
-  --color-ghost:   #E8E2DA;   /* cream-on-cream watermark tone */
+  --c-canvas:      #ffffff;
+  --c-canvas-soft: #f5f5f7;   /* Apple section grey */
+  --c-cream:       #fbfbfd;   /* faint neutral (kept for compat) */
+  --c-hairline:    #d2d2d7;
+  --c-hairline-in: #c7c7cc;
 
-  /* ---- Ink / text ---- */
-  --color-ink:      #141413;  /* warm near-black - headlines, body, CTA, footer */
-  --color-charcoal: #262627;  /* softer black / hover */
-  --color-slate:    #696969;  /* muted secondary text, eyebrow alt */
-  --color-granite:  #555555;  /* deep gray accents */
-  --color-dust:     #D1CDC7;  /* whisper text / disabled */
-  --color-cream-text: #F3F0EE;/* text on ink surfaces */
+  /* ---- Soft hero-wash stops (subtle, near-white/blue - NOT a rainbow) ---- */
+  --mesh-cream:   #fbfbfd;
+  --mesh-lemon:   #f5f6f8;
+  --mesh-lav:     #eef3fb;
+  --mesh-indigo:  #dbe8fb;
+  --mesh-ruby:    #f2f4f8;
+  --mesh-magenta: #e9f1fd;
 
-  /* ---- Accents (used sparingly) ---- */
-  --color-signal:       #CF4500;  /* burnt signal orange - consent/legal only */
-  --color-signal-light: #F37338;  /* light orange - eyebrow dot, decorative arcs */
-  --color-clay:         #9A3A0A;  /* deep rust - secondary link text */
-  --color-link:         #3860BE;  /* inline link blue */
+  /* ---- Type ---- */
+  --font-sans: var(--font-inter), "SF Pro Display", system-ui, -apple-system, sans-serif;
+  --w-thin: 300;  --w-reg: 400;  --w-med: 500;  --w-semi: 600;
 
-  /* ---- Lines ---- */
-  --color-rule:        rgba(20, 20, 19, 0.12);  /* hairline on cream */
-  --color-rule-dark:   rgba(255, 255, 255, 0.18); /* hairline on ink */
-  --rule-hair: 1px;
-  --rule-cta:  1.5px;
+  --t-display-xxl: clamp(2.75rem, 1.4rem + 5.4vw, 4.5rem);   /* big, Apple-cinematic */
+  --t-display-xl:  clamp(2.25rem, 1.5rem + 3vw, 3.25rem);
+  --t-display-lg:  clamp(1.8rem, 1.4rem + 1.7vw, 2.25rem);
+  --t-display-md:  1.625rem;
+  --t-h-lg: 1.4rem;  --t-h-md: 1.25rem;  --t-h-sm: 1.125rem;
+  --t-body-lg: 1.1875rem;  --t-body: 1.0625rem;  --t-tabular: 0.9375rem;
+  --t-caption: 0.875rem;  --t-micro: 0.75rem;  --t-eyebrow: 0.75rem;
 
-  /* ---- Type (one family) ---- */
-  --font-sans: var(--font-sofia), "Sofia Sans", Arial, sans-serif;
-  --w-body:   450;   /* signature half-step body weight */
-  --w-med:    500;   /* headlines, buttons, nav */
-  --w-bold:   700;   /* eyebrows, footer headers */
+  --ls-xxl: -0.03em;  --ls-xl: -0.024em;  --ls-lg: -0.02em;  --ls-md: -0.014em;
+  --ls-eyebrow: 0.06em;
+  --lh-tight: 1.06;  --lh-snug: 1.16;  --lh-body: 1.5;
 
-  --text-eyebrow: 0.875rem;                              /* 14 */
-  --text-sm:      0.875rem;
-  --text-body:    1rem;                                  /* 16 */
-  --text-lg:      1.25rem;                               /* 20 */
-  --text-h3:      1.5rem;                                /* 24 */
-  --text-h2:      clamp(1.9rem, 1.4rem + 2vw, 2.25rem);  /* ~36 */
-  --text-h1:      clamp(2.6rem, 1.6rem + 4vw, 4rem);     /* ~64 */
-  --text-display: clamp(3rem, 1.8rem + 5.5vw, 5rem);
-
-  --ls-tight:   -0.02em;   /* headlines */
-  --ls-btn:     -0.03em;   /* buttons / nav */
-  --ls-eyebrow:  0.04em;   /* eyebrow tracking */
-  --lh-tight: 1.02;
-  --lh-snug:  1.2;
-  --lh-body:  1.45;
+  /* ---- Radius (Apple: soft cards, pill buttons) ---- */
+  --r-xs: 6px;  --r-sm: 8px;  --r-md: 12px;  --r-lg: 18px;  --r-xl: 24px;  --r-pill: 9999px;
 
   /* ---- Spacing (8pt) ---- */
-  --space-2xs: 0.5rem;   /* 8 */
-  --space-xs:  1rem;     /* 16 */
-  --space-sm:  1.5rem;   /* 24 */
-  --space-md:  2rem;     /* 32 */
-  --space-lg:  3rem;     /* 48 */
-  --space-xl:  4rem;     /* 64 */
-  --space-2xl: clamp(4rem, 3rem + 5vw, 6rem);    /* ~96 */
-  --space-3xl: clamp(5rem, 3.5rem + 7vw, 8rem);  /* ~128 */
+  --s-xs: 0.25rem;  --s-sm: 0.5rem;  --s-md: 0.75rem;  --s-lg: 1rem;
+  --s-xl: 1.5rem;  --s-2xl: 2rem;  --s-3xl: 3rem;
+  --s-4xl: clamp(3.5rem, 2.5rem + 4vw, 5.5rem);
+  --s-5xl: clamp(5rem, 3.5rem + 7vw, 8rem);
 
-  /* ---- Radius (20 / 40 / 999 - skip the 8–16 middle) ---- */
-  --radius-xs:    4px;
-  --radius-btn:   20px;
-  --radius-lg:    40px;
-  --radius-pill:  999px;
-  --radius-circle: 50%;
-
-  /* ---- Elevation (soft, large-spread, low-opacity) ---- */
-  --shadow-1: rgba(0, 0, 0, 0.04) 0px 4px 24px 0px;
-  --shadow-2: rgba(0, 0, 0, 0.08) 0px 24px 48px 0px;
+  /* ---- Elevation (Apple: very soft) ---- */
+  --sh-1: rgba(0, 0, 0, 0.05) 0 2px 8px;
+  --sh-2: rgba(0, 0, 0, 0.08) 0 10px 30px, rgba(0, 0, 0, 0.04) 0 2px 8px;
+  --sh-3: rgba(0, 0, 0, 0.12) 0 24px 60px, rgba(0, 0, 0, 0.05) 0 4px 12px;
 
   /* ---- Motion ---- */
-  --ease-out:    cubic-bezier(0.2, 0, 0, 1);
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --dur-1: 160ms;
-  --dur-2: 320ms;
-  --dur-3: 600ms;
+  --dur-1: 150ms;  --dur-2: 300ms;  --dur-3: 600ms;
 
   /* ---- Layout ---- */
-  --page-max: 1280px;
-  --page-pad: clamp(1.5rem, 5vw, 6.25rem);
+  --page-max: 1180px;
+  --page-narrow: 760px;
+  --page-pad: clamp(1.25rem, 5vw, 3rem);
   --measure: 62ch;
 }

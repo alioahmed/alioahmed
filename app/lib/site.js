@@ -2,18 +2,21 @@ export const SITE = {
   name: "Ali Ahmed",
   initials: "AA",
   role: "Product & Innovation Operator",
+  tagline: "I build and ship digital products end to end, and run the programmes around them.",
   location: "Lahore, Pakistan",
   email: "a.aliahmeedd1@gmail.com",
   linkedin: "https://www.linkedin.com/in/alioahmed",
   github: "https://github.com/alioahmed",
+  // TODO: paste your Calendly / cal.com link here; until then the "Book a call" button falls back to email.
+  booking: "",
   available: "Open to fractional, advisory & 0→1 builds",
 };
 
 export const NAV = [
-  { label: "What I do", href: "/#do" },
-  { label: "Work", href: "/#work" },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Work", href: "/work" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const WORK_LINKS = [
@@ -26,3 +29,6 @@ export const WORK_LINKS = [
 
 export const mail = (subject) =>
   `mailto:${SITE.email}?subject=${encodeURIComponent(subject || "Hello Ali")}`;
+
+// Book-a-call target: the booking link if set, otherwise an email fallback.
+export const book = () => SITE.booking || mail("Booking a call");

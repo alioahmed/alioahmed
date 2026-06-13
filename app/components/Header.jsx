@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { SITE, NAV, mail } from "../lib/site";
+import { SITE, NAV, book } from "../lib/site";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -10,22 +10,20 @@ export default function Header() {
 
   return (
     <header className="hdr">
-      <div className="hdr__bar">
+      <div className="hdr__inner">
         <Link className="hdr__brand" href="/" onClick={close}>
           <span className="hdr__mark" aria-hidden="true">{SITE.initials}</span>
-          <span className="hdr__wordmark">
-            <span className="hdr__name">{SITE.name}</span>
-            <span className="hdr__role">{SITE.role}</span>
-          </span>
+          <span className="hdr__name">{SITE.name}</span>
         </Link>
 
         <nav className="hdr__nav" aria-label="Primary">
-          {NAV.map((n) => (
-            <Link key={n.href} href={n.href}>{n.label}</Link>
-          ))}
+          {NAV.map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
         </nav>
 
-        <a className="btn btn--sm hdr__cta" href={mail("Hello Ali")}>Get in touch</a>
+        <div className="hdr__actions">
+          <Link className="hdr__signin" href="/contact">Contact</Link>
+          <a className="btn btn--primary btn--sm" href={book()}>Book a call</a>
+        </div>
 
         <button
           className={`hdr__burger ${open ? "is-open" : ""}`}
@@ -39,10 +37,8 @@ export default function Header() {
 
       {open && (
         <div className="hdr__menu" role="dialog" aria-label="Menu">
-          {NAV.map((n) => (
-            <Link key={n.href} href={n.href} onClick={close}>{n.label}</Link>
-          ))}
-          <a className="btn" href={mail("Hello Ali")} onClick={close}>Get in touch →</a>
+          {NAV.map((n) => <Link key={n.href} href={n.href} onClick={close}>{n.label}</Link>)}
+          <a className="btn btn--primary" href={book()} onClick={close}>Book a call</a>
         </div>
       )}
     </header>
