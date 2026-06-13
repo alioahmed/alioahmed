@@ -1,15 +1,10 @@
 import Link from "next/link";
-
-const EMAIL = "a.aliahmeedd1@gmail.com";
-const LINKEDIN = "https://www.linkedin.com/in/alioahmed";
-const GITHUB = "https://github.com/alioahmed";
-const mail = (subject) => `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}`;
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { mail } from "./lib/site";
 
 const building = ["Cognilium AI", "Paralegent AI", "Bijli Bachao", "Build Buy Software"];
-const clients = [
-  "Procter & Gamble", "Engro", "Aga Khan University Hospital",
-  "Gates Foundation", "UNIDO", "GIZ", "HEC",
-];
+const clients = ["Procter & Gamble", "Engro", "Aga Khan University Hospital", "Gates Foundation", "UNIDO", "GIZ", "HEC"];
 
 const whatIDo = [
   { title: "Build the product", body: "I design and ship digital products end to end: the specs, the architecture, the code, the deployment. AI tools, IoT platforms, and web apps." },
@@ -36,7 +31,6 @@ const stats = [
   { num: "~1 GWh", label: "Energy monitored on Wattey" },
   { num: "47 plants", label: "Solar fleet · 2.2 MW" },
   { num: "10,000", label: "Women trained (Gates Foundation)" },
-  { num: "70+", label: "Founders mobilised in 9 days" },
 ];
 
 const paths = [
@@ -49,48 +43,45 @@ const paths = [
 export default function Home() {
   return (
     <>
-      <header className="navwrap">
-        <nav className="nav" aria-label="Primary">
-          <a className="nav__brand" href="#top">Ali Ahmed</a>
-          <div className="nav__links">
-            <a href="#do">What I do</a>
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-          </div>
-          <a className="btn btn--sm" href={mail("Hello Ali")}>Get in touch →</a>
-        </nav>
-      </header>
-
+      <Header />
       <main>
-        {/* hero: the 2-second answer */}
-        <section className="hero" id="top">
+        {/* hero */}
+        <section className="hero">
           <div className="wrap">
-            <p className="kicker hero__eyebrow rise">Ali Ahmed · Product &amp; Innovation Operator</p>
-            <h1 className="rise-2">I build and ship digital products, <span className="accent">end to end.</span></h1>
-            <p className="hero__sub lede rise-3">
-              I&apos;m Ali, a product and innovation operator in Lahore. For eight years I&apos;ve helped founders,
-              companies, and institutions turn ideas into something real and running: writing the specs, building
-              the software, closing the deals, and running delivery. Today I lead AI products at Cognilium and IoT
-              energy platforms at Bijli Bachao.
-            </p>
-            <div className="hero__actions rise-3">
-              <a className="btn" href={mail("Hello Ali")}>Get in touch →</a>
-              <a className="btn btn--outline" href="#do">See what I do</a>
+            <span className="ghost hero__ghost" aria-hidden="true">Operator</span>
+            <div className="hero__inner">
+              <p className="kicker rise">Ali Ahmed · Product &amp; Innovation Operator</p>
+              <h1 className="rise-2">I build and ship digital products, <span className="accent">end to end.</span></h1>
+              <p className="hero__sub lede rise-3">
+                I&apos;m Ali, a product and innovation operator in Lahore. For eight years I&apos;ve helped founders,
+                companies, and institutions turn ideas into something real and running: writing the specs, building
+                the software, closing the deals, and running delivery. Today I lead AI products at Cognilium and IoT
+                energy platforms at Bijli Bachao.
+              </p>
+              <div className="hero__actions rise-3">
+                <a className="btn" href={mail("Hello Ali")}>Get in touch →</a>
+                <a className="btn btn--outline" href="#do">See what I do</a>
+              </div>
+              <div className="hero__meta rise-3">
+                <span>Lahore, PK · Worldwide</span>
+                <span className="hero__dot" aria-hidden="true" />
+                <span>Fractional · Advisory · 0→1 builds</span>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* trust grid: ventures + clients */}
-        <section className="logos">
+        {/* trust grid */}
+        <section className="section section--lifted">
           <div className="wrap">
             <div className="logos__group">
-              <p className="kicker">Building with</p>
+              <p className="logos__label">Building with</p>
               <div className="logos__grid is-4">
                 {building.map((b) => <div className="logo" key={b}>{b}</div>)}
               </div>
             </div>
             <div className="logos__group">
-              <p className="kicker">Delivered for</p>
+              <p className="logos__label">Delivered for</p>
               <div className="logos__grid is-7">
                 {clients.map((c) => <div className="logo" key={c}>{c}</div>)}
               </div>
@@ -98,16 +89,17 @@ export default function Home() {
           </div>
         </section>
 
-        {/* what I do: plain */}
+        {/* what I do */}
         <section className="section" id="do">
           <div className="wrap">
-            <div className="head">
+            <div className="sec-head">
               <p className="kicker">What I do</p>
               <h2>The specs, the code, and the deals, in one person.</h2>
             </div>
-            <div className="principles">
-              {whatIDo.map((w) => (
-                <div className="principle" key={w.title}>
+            <div className="do__grid">
+              {whatIDo.map((w, i) => (
+                <div className="do__card" key={w.title}>
+                  <span className="do__num">{String(i + 1).padStart(2, "0")}</span>
                   <h3>{w.title}</h3>
                   <p>{w.body}</p>
                 </div>
@@ -116,14 +108,15 @@ export default function Home() {
           </div>
         </section>
 
-        {/* what I've built */}
-        <section className="section" id="work">
+        {/* selected work */}
+        <section className="section section--lifted" id="work">
           <div className="wrap">
-            <div className="head">
+            <div className="sec-head">
               <p className="kicker">Selected work</p>
               <h2>A few things I&apos;ve built and shipped.</h2>
+              <p>Open any project for the full story, the numbers, and how it was built.</p>
             </div>
-            <div className="bento">
+            <div className="work__grid">
               {work.map((t) => (
                 <Link className={`tile ${t.span}`} key={t.slug} href={`/work/${t.slug}`}>
                   <span className="tile__eyebrow">{t.tag}</span>
@@ -139,22 +132,24 @@ export default function Home() {
           </div>
         </section>
 
-        {/* about: the story + quiet proof */}
+        {/* about */}
         <section className="section" id="about">
           <div className="wrap">
-            <div className="head">
+            <div className="sec-head">
               <p className="kicker">A bit about me</p>
               <h2>How I got here.</h2>
             </div>
-            {arc.map((a) => (
-              <div className="arc__step" key={a.n}>
-                <span className="arc__num">{a.n}</span>
-                <div>
-                  <h3 className="arc__title">{a.title}</h3>
-                  <p className="arc__body">{a.body}</p>
+            <div className="arc">
+              {arc.map((a) => (
+                <div className="arc__step" key={a.n}>
+                  <span className="arc__num">{a.n}</span>
+                  <div>
+                    <h3 className="arc__title">{a.title}</h3>
+                    <p className="arc__body">{a.body}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
             <div className="about__stats">
               <div className="stats__card">
                 {stats.map((s) => (
@@ -168,11 +163,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* how I can help: by who you are */}
+        {/* how I can help */}
         <section className="cta" id="contact">
           <div className="cta__panel">
-            <p className="kicker">How I can help</p>
-            <h2>Tell me the outcome. I&apos;ll bring the rest.</h2>
+            <div className="cta__head">
+              <p className="kicker kicker--ink">How I can help</p>
+              <h2>Tell me the outcome. I&apos;ll bring the rest.</h2>
+            </div>
             <div className="cta__paths">
               {paths.map((p) => (
                 <div className="path" key={p.aud}>
@@ -188,24 +185,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <footer className="footer">
-        <div className="wrap">
-          <h2 className="footer__lead">Let&apos;s build something that ships.</h2>
-          <div className="footer__bar">
-            <div>
-              <div className="footer__name">Ali Ahmed</div>
-              <div className="footer__tag">Product &amp; innovation operator. Lahore, Pakistan.</div>
-            </div>
-            <nav className="footer__links" aria-label="Footer">
-              <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-              <a href={mail("Hello Ali")}>Email</a>
-              <a href={GITHUB} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            </nav>
-          </div>
-          <p className="footer__meta">© 2026 Ali Ahmed · The specs, the code, and the deals, in one person.</p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
