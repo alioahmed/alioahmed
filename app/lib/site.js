@@ -17,6 +17,30 @@ export const SITE = {
   // Google Calendar appointment-schedule link — powers the "Book a call" CTA across the whole site.
   booking: "https://calendar.app.google/M4cB7An18terfbNd7",
   available: "Open to fractional, advisory & 0→1 builds",
+  // Person-schema sameAs: every verified public profile (entity-fusion for the search-authority build).
+  sameAs: [
+    "https://www.linkedin.com/in/alioahmed",
+    "https://github.com/alioahmed",
+    "https://gitlab.com/alioahmed",
+    "https://x.com/Alioahmed_",
+    "https://bsky.app/profile/alioahmed.bsky.social",
+    "https://mastodon.social/@alioahmed",
+    "https://dev.to/alioahmed",
+    "https://medium.com/@alioahmed",
+    "https://hashnode.com/@alioahmed",
+    "https://substack.com/@alioahmed",
+    "https://huggingface.co/alioahmed",
+    "https://www.kaggle.com/alioahmed",
+    "https://about.me/alioahmed",
+    "https://alioahmed.bio",
+    "https://www.producthunt.com/@alioahmed",
+    "https://www.patreon.com/cw/alioahmed",
+    "https://www.goodreads.com/user/show/202106301-ali-ahmed",
+    "https://fueler.io/alioahmed",
+    "https://orcid.org/0009-0007-4265-3295",
+    "https://topmate.io/alioahmed",
+    "https://wellfound.com/u/alioahmed",
+  ],
 };
 
 export const NAV = [
