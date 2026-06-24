@@ -7,8 +7,15 @@ export const SITE = {
   email: "a.aliahmeedd1@gmail.com",
   linkedin: "https://www.linkedin.com/in/alioahmed",
   github: "https://github.com/alioahmed",
-  // TODO: paste your Calendly / cal.com link here; until then the "Book a call" button falls back to email.
-  booking: "",
+  x: "https://x.com/Alioahmed_",
+  bluesky: "https://bsky.app/profile/alioahmed.bsky.social",
+  gravatar: "https://gravatar.com/alioahmedd",
+  contactForm: "https://alioahmed.com/contact",
+  // Card identity (locked) — kept separate from SITE.role so the rest of the site is untouched.
+  headline: "AI Solutions Engineer · Cognilium AI",
+  bio: "I build LLM/RAG products, AI agents & IoT platforms that ship to production. 4 AI products + 3 IoT platforms shipped. Building in public.",
+  // Google Calendar appointment-schedule link — powers the "Book a call" CTA across the whole site.
+  booking: "https://calendar.app.google/M4cB7An18terfbNd7",
   available: "Open to fractional, advisory & 0→1 builds",
 };
 

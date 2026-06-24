@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { SITE, mail, book } from "../lib/site";
 import { CalIcon, MailIcon, LinkedInIcon } from "../components/icons";
+import ProfileCard from "../components/ProfileCard";
 
 export const metadata = {
   title: "Contact · Ali Ahmed",
@@ -9,7 +10,7 @@ export const metadata = {
 };
 
 const methods = [
-  { icon: <CalIcon />, label: "Book a call", val: "A 20-minute intro", href: book(), ext: false },
+  { icon: <CalIcon />, label: "Book a call", val: "A 30-minute intro", href: book(), ext: true },
   { icon: <MailIcon />, label: "Email", val: SITE.email, href: mail("Hello Ali"), ext: false },
   { icon: <LinkedInIcon />, label: "LinkedIn", val: "in/alioahmed", href: SITE.linkedin, ext: true },
 ];
@@ -50,21 +51,23 @@ export default function Contact() {
                     </span>
                   </a>
                 ))}
-              </div>
 
-              <div className="card">
-                <span className="tag">Good to know</span>
-                <h3 className="t-md" style={{ margin: "var(--s-lg) 0" }}>What to expect</h3>
-                <ul className="svc__list">
-                  <li>Based in {SITE.location}; work with teams worldwide.</li>
-                  <li>{SITE.available}.</li>
-                  <li>A line on the outcome you want is enough to start — I&apos;ll come back with how I&apos;d approach it.</li>
-                  <li>For diligence or advisory, references available on request.</li>
-                </ul>
-                <div style={{ marginTop: "var(--s-xl)" }}>
-                  <a className="btn btn--primary" href={book()}>Book a call</a>
+                <div className="card">
+                  <span className="tag">Good to know</span>
+                  <h3 className="t-md" style={{ margin: "var(--s-lg) 0" }}>What to expect</h3>
+                  <ul className="svc__list">
+                    <li>Based in {SITE.location}; work with teams worldwide.</li>
+                    <li>{SITE.available}.</li>
+                    <li>A line on the outcome you want is enough to start — I&apos;ll come back with how I&apos;d approach it.</li>
+                    <li>For diligence or advisory, references available on request.</li>
+                  </ul>
+                  <div style={{ marginTop: "var(--s-xl)" }}>
+                    <a className="btn btn--primary" href={book()}>Book a call</a>
+                  </div>
                 </div>
               </div>
+
+              <ProfileCard />
             </div>
           </div>
         </section>
