@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { SITE, NAV, WORK_LINKS, mail, book } from "../lib/site";
-import { LinkedInIcon, GitHubIcon, MailIcon } from "./icons";
+import { SITE, NAV, WORK_LINKS, PROFILES, mail, book } from "../lib/site";
+import { LinkedInIcon, GitHubIcon, MailIcon, XIcon, BlueskyIcon } from "./icons";
 
 export default function Footer() {
   return (
@@ -36,11 +36,22 @@ export default function Footer() {
           </div>
         </div>
 
+        <div className="ftr__profiles">
+          <h4>Find me everywhere</h4>
+          <div className="ftr__profiles-grid">
+            {PROFILES.map((p) => (
+              <a key={p.href} href={p.href} target="_blank" rel="noopener noreferrer">{p.label}</a>
+            ))}
+          </div>
+        </div>
+
         <div className="ftr__bottom">
           <span className="ftr__legal">© 2026 {SITE.name} · {SITE.location}</span>
           <div className="ftr__social">
             <a aria-label="LinkedIn" href={SITE.linkedin} target="_blank" rel="noopener noreferrer"><LinkedInIcon /></a>
             <a aria-label="GitHub" href={SITE.github} target="_blank" rel="noopener noreferrer"><GitHubIcon /></a>
+            <a aria-label="X" href={SITE.x} target="_blank" rel="noopener noreferrer"><XIcon /></a>
+            <a aria-label="Bluesky" href={SITE.bluesky} target="_blank" rel="noopener noreferrer"><BlueskyIcon /></a>
             <a aria-label="Email" href={mail("Hello Ali")}><MailIcon /></a>
           </div>
         </div>

@@ -50,6 +50,31 @@ export const NAV = [
   { label: "Contact", href: "/contact" },
 ];
 
+// Visible profile links (footer "Find me everywhere"). alioahmed.bio = the Gravatar hub.
+export const PROFILES = [
+  { label: "LinkedIn", href: SITE.linkedin },
+  { label: "GitHub", href: SITE.github },
+  { label: "GitLab", href: "https://gitlab.com/alioahmed" },
+  { label: "X", href: SITE.x },
+  { label: "Bluesky", href: SITE.bluesky },
+  { label: "Mastodon", href: "https://mastodon.social/@alioahmed" },
+  { label: "dev.to", href: "https://dev.to/alioahmed" },
+  { label: "Medium", href: "https://medium.com/@alioahmed" },
+  { label: "Substack", href: "https://substack.com/@alioahmed" },
+  { label: "Hashnode", href: "https://hashnode.com/@alioahmed" },
+  { label: "Hugging Face", href: "https://huggingface.co/alioahmed" },
+  { label: "Kaggle", href: "https://www.kaggle.com/alioahmed" },
+  { label: "Product Hunt", href: "https://www.producthunt.com/@alioahmed" },
+  { label: "Patreon", href: "https://www.patreon.com/cw/alioahmed" },
+  { label: "Goodreads", href: "https://www.goodreads.com/user/show/202106301-ali-ahmed" },
+  { label: "Fueler", href: "https://fueler.io/alioahmed" },
+  { label: "ORCID", href: "https://orcid.org/0009-0007-4265-3295" },
+  { label: "Topmate", href: "https://topmate.io/alioahmed" },
+  { label: "Wellfound", href: "https://wellfound.com/u/alioahmed" },
+  { label: "about.me", href: "https://about.me/alioahmed" },
+  { label: "alioahmed.bio", href: SITE.gravatar },
+];
+
 export const WORK_LINKS = [
   { label: "Bijli Bachao", slug: "bijli-bachao" },
   { label: "Cognilium AI", slug: "cognilium" },

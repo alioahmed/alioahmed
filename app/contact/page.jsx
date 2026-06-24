@@ -67,7 +67,13 @@ export default function Contact() {
                 </div>
               </div>
 
-              <ProfileCard />
+              <div className="contact__side">
+                <ProfileCard />
+                <div className="qr">
+                  <img src="/alioahmed-bio-qr.png" alt="QR code linking to alioahmed.bio" width="168" height="168" />
+                  <a href={SITE.gravatar} target="_blank" rel="noopener noreferrer">Scan to open alioahmed.bio</a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
