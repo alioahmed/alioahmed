@@ -15,7 +15,7 @@ export const SITE = {
   headline: "AI Solutions Engineer · Cognilium AI",
   bio: "I build LLM/RAG products, AI agents & IoT platforms that ship to production. 4 AI products + 3 IoT platforms shipped. Building in public.",
   // Google Calendar appointment-schedule link — powers the "Book a call" CTA across the whole site.
-  booking: "https://calendar.app.google/M4cB7An18terfbNd7",
+  booking: "https://calendar.app.google/byKeMUBfy4zbCJSx8",
   available: "Open to fractional, advisory & 0→1 builds",
   // Person-schema sameAs: every verified public profile (entity-fusion for the search-authority build).
   sameAs: [
