@@ -25,7 +25,7 @@ export default function ProfileCard() {
       <div className="pcard__cta">
         <a className="btn btn--primary" href={book()} target="_blank" rel="noopener noreferrer">Book a call</a>
       </div>
-      <a className="pcard__profile" href={SITE.gravatar} target="_blank" rel="noopener noreferrer">View Gravatar profile →</a>
+      <a className="pcard__profile" href={SITE.gravatar} target="_blank" rel="noopener noreferrer">alioahmed.bio →</a>
     </aside>
   );
 }

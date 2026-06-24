@@ -9,7 +9,7 @@ export const SITE = {
   github: "https://github.com/alioahmed",
   x: "https://x.com/Alioahmed_",
   bluesky: "https://bsky.app/profile/alioahmed.bsky.social",
-  gravatar: "https://gravatar.com/alioahmedd",
+  gravatar: "https://alioahmed.bio",
   contactForm: "https://alioahmed.com/contact",
   // Card identity (locked) — kept separate from SITE.role so the rest of the site is untouched.
   headline: "AI Solutions Engineer · Cognilium AI",
