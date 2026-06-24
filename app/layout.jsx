@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: "Ali Ahmed · Product & Innovation Operator",
     description:
-      "I write the specs, close the deals, and ship the code, in one person, at production scale.",
+      "I write the specs, close the deals, and ship the code — as one operator, at production scale.",
     type: "website",
   },
 };

@@ -7,8 +7,8 @@ import { work } from "./work/work-data";
 
 const stats = [
   { num: "8+", label: "Years across hardware, software & AI" },
-  { num: "~1 GWh", label: "Energy monitored on Wattey" },
-  { num: "47", label: "Solar plants monitored · 2.2 MW" },
+  { num: "~1.04 GWh", label: "Energy monitored on Wattey" },
+  { num: "56", label: "Solar plants monitored · 698 strings" },
   { num: "10,000", label: "Women trained (Gates Foundation)" },
 ];
 
@@ -30,22 +30,27 @@ export default function Home() {
         {/* hero */}
         <section className="hero">
           <div className="mesh" aria-hidden="true" />
-          <div className="wrap hero__inner">
-            <span className="eyebrow rise">Product &amp; Innovation Operator</span>
-            <h1 className="rise-2">I build and ship digital products, <span className="accent">end to end.</span></h1>
-            <p className="hero__sub rise-3">
-              I&apos;m Ali, a product and innovation operator in Lahore. For eight years I&apos;ve helped founders,
-              companies, and institutions turn ideas into something real and running: writing the specs, building
-              the software, closing the deals, and running delivery.
-            </p>
-            <div className="hero__actions rise-3">
-              <a className="btn btn--primary" href={book()}>Book a call</a>
-              <Link className="btn btn--secondary" href="/work">See my work</Link>
+          <div className="wrap hero__split">
+            <div className="hero__inner">
+              <span className="eyebrow rise">Product &amp; Innovation Operator</span>
+              <h1 className="rise-2">I build and ship digital products, <span className="accent">end to end.</span></h1>
+              <p className="hero__sub rise-3">
+                I&apos;m Ali, a product and innovation operator in Lahore. For eight years I&apos;ve helped founders,
+                companies, and institutions turn ideas into something real and running: writing the specs, building
+                the software, closing the deals, and running delivery.
+              </p>
+              <div className="hero__actions rise-3">
+                <a className="btn btn--primary" href={book()}>Book a call</a>
+                <Link className="btn btn--secondary" href="/work">See my work</Link>
+              </div>
+              <div className="hero__meta rise-3">
+                <span>Lahore, PK · Worldwide</span>
+                <span className="dot" aria-hidden="true" />
+                <span>Fractional · Advisory · 0→1 builds</span>
+              </div>
             </div>
-            <div className="hero__meta rise-3">
-              <span>Lahore, PK · Worldwide</span>
-              <span className="dot" aria-hidden="true" />
-              <span>Fractional · Advisory · 0→1 builds</span>
+            <div className="rise-3">
+              <img className="hero__photo" src="/ali-ahmed.jpeg" alt="Ali Ahmed" width="1536" height="1024" />
             </div>
           </div>
         </section>
@@ -84,7 +89,7 @@ export default function Home() {
           <div className="wrap">
             <div className="sec-head">
               <span className="eyebrow">What I do</span>
-              <h2 className="t-lg">The specs, the code, and the deals, in one person.</h2>
+              <h2 className="t-lg">The specs, the code, and the deals — one operator, end to end.</h2>
             </div>
             <div className="grid cols-3">
               {whatIDo.map((w) => (

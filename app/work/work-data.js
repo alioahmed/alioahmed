@@ -13,15 +13,15 @@ export const work = {
     summary:
       "Three production SaaS platforms covering Pakistan's commercial energy lifecycle: what you pull from the grid, what your solar generates, and how tenants are billed. Built end to end.",
     stats: [
-      { num: "~1 GWh", label: "Monitored on Wattey in 3 months" },
-      { num: "47 plants", label: "Solar fleet on SPC · 2.2 MW" },
+      { num: "~1.04 GWh", label: "Monitored on Wattey in ~6 months" },
+      { num: "56 plants", label: "Solar fleet on SPC · 698 PV strings" },
       { num: "95%", label: "Meter-reading accuracy, up from 50%" },
-      { num: "3", label: "Production platforms, one operator" },
+      { num: "3", label: "Production platforms, end to end" },
     ],
     sections: [
       {
         heading: "Wattey — real-time IoT electricity monitoring",
-        paras: ["Live monitoring for commercial sites: 28 smart meters across 8 client sites in 4 cities, reporting every 3 minutes. ~0.96 GWh monitored and 509,000+ readings stored in the first three months."],
+        paras: ["Live monitoring for commercial sites: 22 smart meters across 8 commercial sectors, reporting every 3 minutes. ~1.04 GWh monitored and 500,000+ readings stored over about six months."],
         bullets: [
           "Pakistan-specific seasonal time-of-use tariffs (T1–T4, four seasons)",
           "Automatic generator on/off detection and costing during grid outages",
@@ -30,7 +30,7 @@ export const work = {
       },
       {
         heading: "Solar Performance Cloud — multi-brand solar diagnostics",
-        paras: ["Pakistan's first independent, multi-brand solar performance platform. 47 plants and 52 inverters (Growatt, Solis, Huawei, Sungrow) unified in one dashboard, 284 PV strings graded daily across 2.2 MW. No hardware required: it connects to inverter cloud APIs."],
+        paras: ["Pakistan's first independent, multi-brand solar performance platform. 56 plants and 70 inverters (Growatt, Solis, Huawei, Sungrow, Canadian Solar) unified in one dashboard, 698 PV strings graded daily. No hardware required: it connects to inverter cloud APIs."],
         bullets: [
           "IEC 61724-1 health scoring and IEC 62446-1 five-state string classification",
           "String-level fault diagnosis: dust, shading, dead panels, sensor faults",
@@ -38,7 +38,7 @@ export const work = {
         ],
       },
       {
-        heading: "Ready Billing — photo-verified OCR billing",
+        heading: "TenantBill by Wattey — photo-verified OCR billing",
         paras: ["Automated billing for multi-tenant commercial properties. Live at a shopping mall with 74 tenants and 469 meters captured by mobile app at 85–95% OCR confidence. Reading accuracy improved from 50% to 95%, and a 15-day manual process now takes about 3 hours."],
         bullets: [
           "React Native + Expo mobile capture with Google Vision OCR; Next.js + Supabase dashboard",
@@ -54,15 +54,15 @@ export const work = {
   },
 
   cognilium: {
-    tag: "Cognilium AI · product lead",
-    title: "Five AI products + the company machine",
+    tag: "Cognilium AI · product owner",
+    title: "Four AI products + the company machine",
     role: "AI Business Analyst & Product Owner",
     period: "Sept 2024 – present",
     link: { label: "cognilium.ai", href: "https://cognilium.ai" },
     summary:
-      "Product lead at a boutique AI engineering firm serving US and UAE clients. Five AI products from ideation to production, plus the brand, website, and growth engine behind them.",
+      "Product owner at a boutique AI engineering firm serving US and UAE clients. Four AI products from ideation to production, plus the brand, website, and growth engine behind them.",
     stats: [
-      { num: "5", label: "AI products shipped" },
+      { num: "4", label: "AI products shipped" },
       { num: "76 pages", label: "cognilium.ai, built end to end" },
       { num: "50+", label: "Projects delivered (firm)" },
       { num: "96%", label: "Client satisfaction (firm)" },
@@ -75,7 +75,6 @@ export const work = {
           "VORTA — enterprise knowledge / conversational AI; 92% first-call resolution, 22 languages, replaced a 24-person support team (≈ USD 400K saved)",
           "ProspectVox — voice sales AI; 47% connect rate on outbound, 5-stage workflow",
           "Paralegent AI — agentic contract review (full detail on its own page)",
-          "ProProspect — AI outreach pipeline",
         ],
       },
       {
@@ -101,7 +100,7 @@ export const work = {
       { num: "18+", label: "Specialised AI agents + orchestrator" },
       { num: "15–20s", label: "Contract match (1536-d search)" },
       { num: "2–8 min", label: "Full analysis per contract" },
-      { num: "56 pages", label: "GTM site, built solo" },
+      { num: "56 pages", label: "GTM site, built end to end" },
     ],
     sections: [
       {
@@ -115,7 +114,7 @@ export const work = {
       },
       {
         heading: "My role",
-        paras: ["I led the product from ideation through production, and built the entire go-to-market site solo: 56 statically rendered Next.js pages, 50 components, a 26-script SEO automation pipeline, and full AI-citation infrastructure, live and indexed. (Founder & CEO: Mudassir Marwat.) The product is in go-to-market with paying clients under NDA."],
+        paras: ["I led the product from ideation through production, and built the entire go-to-market site end to end: 56 statically rendered Next.js pages, 50 components, a 26-script SEO automation pipeline, and full AI-citation infrastructure, live and indexed. (Founder & CEO: Mudassir Marwat.) The product is in go-to-market with paying clients under NDA."],
       },
     ],
   },

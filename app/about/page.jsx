@@ -44,13 +44,13 @@ export default function About() {
                 <h1 className="t-xl rise-2" style={{ margin: "var(--s-md) 0", maxWidth: "14ch" }}>The operator behind the work.</h1>
                 <p className="hero__sub rise-3">
                   I&apos;m Ali Ahmed, a product and innovation operator. I write the specs, close the deals, and ship the
-                  code, in one person, at production scale. Built Pakistan&apos;s first IoT sanitary-napkin vending machine,
+                  code — as one operator, at production scale. Built Pakistan&apos;s first IoT sanitary-napkin vending machine,
                   ran the Gates Foundation&apos;s programme for 10,000 women, and today lead AI products at Cognilium and
                   IoT energy platforms at Bijli Bachao.
                 </p>
               </div>
               <div style={{ display: "grid", placeItems: "center" }}>
-                <div aria-hidden="true" style={{ width: "clamp(7rem, 20vw, 12rem)", height: "clamp(7rem, 20vw, 12rem)", borderRadius: "50%", background: "linear-gradient(135deg, var(--c-primary-soft), var(--mesh-ruby))", color: "#fff", display: "grid", placeItems: "center", fontSize: "clamp(2.5rem, 8vw, 4rem)", fontWeight: 300, letterSpacing: "-0.03em", boxShadow: "var(--sh-2)" }}>AA</div>
+                <img className="portrait" src="/ali-ahmed.jpeg" alt="Ali Ahmed" width="1536" height="1024" />
               </div>
             </div>
           </div>
