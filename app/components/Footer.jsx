@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SITE, NAV, WORK_LINKS, PROFILES, mail, book } from "../lib/site";
-import { LinkedInIcon, GitHubIcon, MailIcon, XIcon, BlueskyIcon } from "./icons";
+import { BRANDS, MailIcon } from "./icons";
 
 export default function Footer() {
   return (
@@ -27,33 +27,35 @@ export default function Footer() {
               <h4>Work</h4>
               {WORK_LINKS.map((w) => <Link key={w.slug} href={`/work/${w.slug}`}>{w.label}</Link>)}
             </div>
-            <div className="ftr__col">
-              <h4>Connect</h4>
-              <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-              <a href={SITE.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-              <a href={mail("Hello Ali")}>Email</a>
-            </div>
           </div>
         </div>
 
         <div className="ftr__profiles">
           <h4>Find me everywhere</h4>
-          <div className="ftr__profiles-grid">
-            {PROFILES.map((p) => (
-              <a key={p.href} href={p.href} target="_blank" rel="noopener noreferrer">{p.label}</a>
-            ))}
+          <div className="ftr__logos">
+            {PROFILES.map((p) => {
+              const Icon = BRANDS[p.label];
+              return (
+                <a
+                  key={p.href}
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={p.label}
+                  title={p.label}
+                >
+                  {Icon ? <Icon /> : p.label}
+                </a>
+              );
+            })}
           </div>
         </div>
 
         <div className="ftr__bottom">
           <span className="ftr__legal">© 2026 {SITE.name} · {SITE.location}</span>
-          <div className="ftr__social">
-            <a aria-label="LinkedIn" href={SITE.linkedin} target="_blank" rel="noopener noreferrer"><LinkedInIcon /></a>
-            <a aria-label="GitHub" href={SITE.github} target="_blank" rel="noopener noreferrer"><GitHubIcon /></a>
-            <a aria-label="X" href={SITE.x} target="_blank" rel="noopener noreferrer"><XIcon /></a>
-            <a aria-label="Bluesky" href={SITE.bluesky} target="_blank" rel="noopener noreferrer"><BlueskyIcon /></a>
-            <a aria-label="Email" href={mail("Hello Ali")}><MailIcon /></a>
-          </div>
+          <a className="ftr__mail" href={mail("Hello Ali")} aria-label="Email Ali" title={SITE.email}>
+            <MailIcon />
+          </a>
         </div>
       </div>
     </footer>
