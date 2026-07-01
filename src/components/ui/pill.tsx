@@ -2,16 +2,16 @@ import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
-/** Pill — small mono-uppercase badge (eyebrows, status chips). */
+/** Pill — small caps badge (eyebrows, status chips). Brand caps, not mono. */
 const pillVariants = cva(
-  'inline-flex items-center gap-1.5 rounded-[var(--radius-full)] font-mono text-[11px] uppercase tracking-[0.14em]',
+  'inline-flex items-center gap-1.5 rounded-[var(--radius-full)] font-medium uppercase tracking-[0.14em] text-[11px] leading-none',
   {
     variants: {
       variant: {
-        accent: 'bg-accent-soft text-accent',
+        accent: 'bg-accent-soft text-accent-hover',
         neutral: 'bg-surface text-muted',
         outline: 'border border-hairline text-muted',
-        live: 'bg-accent-soft text-accent',
+        live: 'bg-accent-soft text-accent-hover',
       },
       size: {
         sm: 'px-2.5 py-1',

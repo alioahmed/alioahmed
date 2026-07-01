@@ -24,6 +24,27 @@ handle or stale title suppresses entity fusion). When you change an identity fie
 a handle / a new profile), propagate the SAME value to Wikidata + LinkedIn + the changed profile, and
 run `npm run check:entity`. Master sheet + Wikidata create-spec: **`docs/IDENTITY.md`**.
 
+## Design system (Stripe-inspired — follow it, don't reinvent)
+
+Full spec: **`docs/DESIGN.md`**. Implemented as ONE token system in `src/app/globals.css` `@theme`.
+Register: financial-infrastructure polish — deep-navy ink, ONE electric-indigo CTA, atmospheric
+gradient mesh on heroes, thin (300) display type with negative tracking, tabular figures for numbers.
+
+- **Palette:** `--color-ink` `#0d253d` (never pure black), `--color-accent` `#533afd` (the only CTA
+  colour — one filled indigo pill per band; hover→`accent-hover`, press→`accent-press`). Navy family
+  for text (`body`/`muted`/`faint`, all WCAG-AA on canvas + surface). `brand-dark` = dark card fill.
+  Gradient-only accents (`ruby`/`magenta`) are NEVER buttons.
+- **Type:** display tiers are `.text-display-{xxl,xl,lg,md}` + `.text-lead` + `.eyebrow` (defined in
+  globals). Display is **weight 300 + negative tracking** — the signature; never bump above 300.
+  Body is 400. Numerics use `tabular-nums`. `ss01` is on globally. Inter is the Sohne substitute.
+- **Shape/elevation:** all buttons + tags are pills (`--radius-full`); cards `--radius-featured` (12px).
+  Shadows are blue-tinted (`--shadow-level-*`), used sparingly.
+- **Signature mesh:** `<GradientMesh>` / `Section mesh` — layered radial-gradients (`.gradient-mesh`),
+  masked to fade into canvas. Heroes get it; bare-canvas heroes are off-brand.
+- **Primitives** (compose, never restyle inline): `Button` (primary/secondary/outline/dark/ghost/link),
+  `Cta` (accent/secondary/dark/outline pill+arrow), `Card`, `Pill`, `Section`/`SectionHeading`,
+  `StatTile`, `Container`, `GradientMesh`.
+
 ## Tech rules
 
 - Next.js 16 App Router; **Server Components by default**, `'use client'` only at interactive leaves.

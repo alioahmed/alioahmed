@@ -14,7 +14,8 @@ import { Footer } from '@/components/layout/footer'
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  weight: ['400', '500', '600', '700', '800'],
+  // 300 is the Stripe-style thin display weight; 400 body; 500/600 UI + buttons.
+  weight: ['300', '400', '500', '600', '700'],
   display: 'swap',
 })
 
@@ -26,7 +27,7 @@ const geistMono = Geist_Mono({
 })
 
 export const viewport: Viewport = {
-  themeColor: '#0b0c0f',
+  themeColor: '#0d253d',
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',

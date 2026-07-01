@@ -11,13 +11,19 @@ import { cn } from '@/lib/utils'
 const ctaVariants = cva(
   [
     'group inline-flex items-center gap-2 font-medium rounded-[var(--radius-full)]',
-    'transition-colors duration-[var(--motion-fast)] ease-[var(--ease-out)]',
+    'transition-[background-color,box-shadow] duration-[var(--motion-fast)] ease-[var(--ease-out)]',
   ],
   {
     variants: {
       variant: {
-        accent: 'bg-accent text-accent-ink hover:bg-accent-hover',
-        ink: 'bg-ink text-on-ink hover:bg-[#1c1f25]',
+        // The dominant indigo CTA.
+        accent:
+          'bg-accent text-accent-ink shadow-[var(--shadow-level-1)] hover:bg-accent-hover active:bg-accent-press',
+        // Outline alternative on light surfaces (white pill, indigo label).
+        secondary: 'border border-accent bg-canvas text-accent hover:bg-accent-soft',
+        // On dark/navy shells.
+        dark: 'bg-brand-dark text-on-ink hover:bg-ink',
+        // Neutral outline.
         outline: 'border border-hairline text-ink hover:bg-surface',
       },
       size: {

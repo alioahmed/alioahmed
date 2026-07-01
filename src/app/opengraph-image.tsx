@@ -19,7 +19,7 @@ export default function OpengraphImage() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        background: '#0b0c0f',
+        background: 'linear-gradient(135deg, #0d253d 0%, #1c1e54 100%)',
         color: '#ffffff',
         padding: '72px',
         fontFamily: 'sans-serif',
@@ -30,7 +30,7 @@ export default function OpengraphImage() {
           fontSize: 26,
           letterSpacing: '0.18em',
           textTransform: 'uppercase',
-          color: '#7c8cff',
+          color: '#8b83fe',
           fontWeight: 600,
         }}
       >
@@ -40,11 +40,11 @@ export default function OpengraphImage() {
         <div style={{ fontSize: 92, fontWeight: 700, letterSpacing: '-0.03em' }}>
           {SITE_CONFIG.name}
         </div>
-        <div style={{ fontSize: 34, fontWeight: 400, color: '#b6bcc6', maxWidth: 940 }}>
+        <div style={{ fontSize: 34, fontWeight: 400, color: '#aab8c9', maxWidth: 940 }}>
           Builds what he sells — LLM/RAG products, AI agents & IoT platforms shipped to production.
         </div>
       </div>
-      <div style={{ display: 'flex', fontSize: 26, color: '#7e8694', gap: 28 }}>
+      <div style={{ display: 'flex', fontSize: 26, color: '#8b98ab', gap: 28 }}>
         <span>Cognilium AI</span>
         <span>·</span>
         <span>Bijli Bachao</span>

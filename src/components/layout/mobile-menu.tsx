@@ -95,9 +95,7 @@ export function MobileMenu({ nav, contactHref, profiles }: MobileMenuProps) {
             className="pt-safe pb-safe bg-canvas border-hairline absolute inset-y-0 right-0 flex w-[min(20rem,86vw)] flex-col overflow-y-auto overscroll-contain border-l shadow-[var(--shadow-level-4)]"
           >
             <div className="px-gutter flex h-16 items-center justify-between">
-              <span className="text-faint font-mono text-[11px] tracking-[0.14em] uppercase">
-                Menu
-              </span>
+              <span className="eyebrow text-faint">Menu</span>
               <button
                 type="button"
                 onClick={() => setOpen(false)}

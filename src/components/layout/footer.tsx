@@ -13,7 +13,7 @@ export function Footer() {
     <footer className="pb-safe border-hairline bg-surface border-t">
       <Container className="grid gap-8 py-12 md:grid-cols-[1fr_auto]">
         <div>
-          <p className="text-ink font-mono text-sm font-semibold">{SITE_CONFIG.name}</p>
+          <p className="text-ink text-base font-semibold tracking-[-0.01em]">{SITE_CONFIG.name}</p>
           <p className="text-muted mt-1 text-sm">
             {SITE_CONFIG.title} · {SITE_CONFIG.location.display}
           </p>
@@ -36,9 +36,7 @@ export function Footer() {
         </div>
         {FOOTER_LINKS.map((group) => (
           <nav key={group.heading} aria-label={group.heading} className="text-sm">
-            <p className="text-faint font-mono text-[11px] tracking-[0.14em] uppercase">
-              {group.heading}
-            </p>
+            <p className="eyebrow text-faint">{group.heading}</p>
             <ul className="mt-3 space-y-2">
               {group.items.map((item) => (
                 <li key={item.href}>

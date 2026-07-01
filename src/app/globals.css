@@ -2,38 +2,49 @@
 @import 'tw-animate-css';
 
 /* ------------------------------------------------------------------ *
- * alioahmed design tokens — ONE clean system (light theme).
- * Register: clean, evidence-first, senior-credibility.
+ * alioahmed design tokens — Stripe-inspired system (light theme).
+ * Source spec: docs/DESIGN.md. Register: financial-infrastructure polish —
+ * deep-navy ink, one electric-indigo CTA, an atmospheric gradient mesh on heroes,
+ * thin (300) display type with negative tracking, tabular figures for numerics.
+ *
  * Tailwind v4 CSS-first: tokens here generate utilities (bg-accent, text-ink, rounded-card…).
- * The brand accent is intentionally isolated to a single variable so it can be retuned in the
- * design phase without touching anything else.
+ * The brand primary is isolated to --color-accent* so it stays a single swap point.
  * ------------------------------------------------------------------ */
 @theme inline {
-  /* Fonts — wired to the next/font CSS variables set on <html>. */
+  /* Fonts — wired to the next/font CSS variables set on <html>. Inter is the Sohne substitute. */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, 'SF Mono', monospace;
 
-  /* Neutrals / ink */
-  --color-ink: #0b0c0f; /* strong headings */
-  --color-body: #383d45; /* body copy */
-  --color-muted: #6b7280; /* secondary text */
-  --color-faint: #676d77; /* tertiary / captions — WCAG AA on canvas + surface */
+  /* Ink / text — deep navy family, never pure black (all AA on canvas + surface). */
+  --color-ink: #0d253d; /* headings / strong text */
+  --color-body: #273951; /* body copy */
+  --color-muted: #4a5a72; /* secondary text (AA-tuned darker mute) */
+  --color-faint: #5c6b83; /* tertiary / captions / eyebrows — AA on canvas AND surface band */
 
   /* Surfaces */
   --color-canvas: #ffffff; /* page background */
-  --color-surface: #fafbfc; /* lifted panels / alt sections (kept light so AA text holds) */
-  --color-surface-2: #eef0f4; /* deeper panels */
-  --color-hairline: #e6e8ec; /* borders / dividers */
+  --color-surface: #f6f9fc; /* cool off-white feature bands */
+  --color-surface-2: #eef2f7; /* deeper cool panel */
+  --color-cream: #f5e9d4; /* warm interlude band */
+  --color-hairline: #e3e8ee; /* borders / dividers */
+  --color-hairline-input: #a8c3de; /* cooler input hairline */
 
-  /* Accent — PROVISIONAL (single swap point). Refined indigo. */
-  --color-accent: #4338ca;
-  --color-accent-hover: #3730a3;
-  --color-accent-soft: #eef0ff;
-  --color-accent-ink: #ffffff; /* text on accent */
+  /* Brand primary — electric indigo (the single CTA colour). */
+  --color-accent: #533afd;
+  --color-accent-hover: #4434d4; /* deep — hover */
+  --color-accent-press: #2e2b8c; /* pressed */
+  --color-accent-strong: #665efd; /* soft-bright — UI accents */
+  --color-accent-soft: #ece9fe; /* pale wash — pill bg / selection */
+  --color-accent-ink: #ffffff; /* text on indigo */
 
-  /* On-ink (for dark CTA panels / footer) */
-  --color-on-ink: #f4f5f7;
-  --color-on-ink-muted: #aab0ba;
+  /* Brand dark — deep navy fill for featured cards / dark shells. */
+  --color-brand-dark: #1c1e54;
+  --color-on-ink: #ffffff; /* text on ink / dark */
+  --color-on-ink-muted: #aab8c9; /* muted text on dark */
+
+  /* Gradient-mesh accents (used only inside the mesh, never as buttons). */
+  --color-ruby: #ea2261;
+  --color-magenta: #f96bee;
 
   /* Semantic */
   --color-success: #108c3d;
@@ -41,20 +52,21 @@
   --color-error: #d23b3b;
   --color-info: #2563eb;
 
-  /* Radius scale */
+  /* Radius scale (per spec: xs4 sm6 md8 lg12 xl16 full). */
   --radius-hairline: 1px;
-  --radius-sharp: 4px;
-  --radius-standard: 6px;
-  --radius-card: 8px;
-  --radius-featured: 12px;
-  --radius-full: 9999px;
+  --radius-sharp: 4px; /* xs — tags, table chrome */
+  --radius-standard: 6px; /* sm — inputs */
+  --radius-card: 8px; /* md — compact cards, menu items */
+  --radius-featured: 12px; /* lg — feature/pricing cards */
+  --radius-xl: 16px; /* xl — mockup chrome */
+  --radius-full: 9999px; /* pill — all buttons + tags */
 
-  /* Shadow scale (soft, light-theme appropriate) */
-  --shadow-border: 0 0 0 1px rgba(11, 12, 15, 0.06);
-  --shadow-level-1: 0 1px 2px rgba(11, 12, 15, 0.05);
-  --shadow-level-2: 0 2px 6px rgba(11, 12, 15, 0.06);
-  --shadow-level-3: 0 6px 20px rgba(11, 12, 15, 0.08);
-  --shadow-level-4: 0 16px 40px rgba(11, 12, 15, 0.1);
+  /* Elevation — blue-tinted shadows (rgba of #003770), per spec. */
+  --shadow-border: 0 0 0 1px rgba(0, 55, 112, 0.08);
+  --shadow-level-1: 0 1px 3px rgba(0, 55, 112, 0.08);
+  --shadow-level-2: 0 2px 6px rgba(0, 55, 112, 0.06);
+  --shadow-level-3: 0 8px 24px rgba(0, 55, 112, 0.08), 0 2px 6px rgba(0, 55, 112, 0.04);
+  --shadow-level-4: 0 24px 56px rgba(0, 55, 112, 0.12), 0 8px 24px rgba(0, 55, 112, 0.06);
 
   /* Motion */
   --motion-instant: 80ms;
@@ -64,8 +76,8 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 
-  /* Layout */
-  --container-max: 1120px;
+  /* Layout — Stripe centres marketing in ~1200px. */
+  --container-max: 1200px;
 }
 
 /* ------------------------------------------------------------------ *
@@ -88,7 +100,8 @@ body {
   background-color: var(--color-canvas);
   color: var(--color-body);
   font-family: var(--font-sans);
-  font-feature-settings: 'ss01', 'cv11', 'liga';
+  font-weight: 400; /* body regular; display tiers explicitly drop to 300 */
+  font-feature-settings: 'ss01', 'liga', 'calt'; /* ss01 globally = brand character set */
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -126,6 +139,80 @@ body {
       font-size: max(16px, 1rem);
     }
   }
+}
+
+/* ------------------------------------------------------------------ *
+ * Typography scale (@layer components → utilities still override).
+ * Thin (300) display with negative tracking is the brand signature.
+ * Fluid via clamp() = mobile-first (spec stair-steps 56→36 on phones).
+ * ------------------------------------------------------------------ */
+@layer components {
+  .text-display-xxl {
+    font-weight: 300;
+    font-size: clamp(2.25rem, 1.35rem + 3.6vw, 3.5rem); /* 36 → 56 */
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+  }
+  .text-display-xl {
+    font-weight: 300;
+    font-size: clamp(2rem, 1.5rem + 2.2vw, 3rem); /* 32 → 48 */
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+  }
+  .text-display-lg {
+    font-weight: 300;
+    font-size: clamp(1.75rem, 1.45rem + 1.3vw, 2rem); /* 28 → 32 */
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+  }
+  .text-display-md {
+    font-weight: 300;
+    font-size: clamp(1.5rem, 1.35rem + 0.7vw, 1.625rem); /* 24 → 26 */
+    line-height: 1.15;
+    letter-spacing: -0.014em;
+  }
+  .text-heading-lg {
+    font-weight: 300;
+    font-size: 1.375rem; /* 22 */
+    line-height: 1.18;
+    letter-spacing: -0.012em;
+  }
+  .text-heading-md {
+    font-weight: 400;
+    font-size: 1.25rem; /* 20 */
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+  .text-lead {
+    font-weight: 300;
+    font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem); /* 17 → 19 lead */
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+  }
+  /* Eyebrow — Inter caps (replaces the old mono eyebrow); brand-consistent. */
+  .eyebrow {
+    font-weight: 500;
+    font-size: 0.6875rem; /* 11 */
+    line-height: 1.2;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Signature: gradient mesh backdrop.
+ * Layered radial-gradients approximate Stripe's atmospheric wash — cream (TL) →
+ * lavender/indigo (TR) → magenta hint (R) → cool mint (BR), floating on white.
+ * GPU-cheap, fully responsive, no image asset. Fades to canvas via mask.
+ * ------------------------------------------------------------------ */
+.gradient-mesh {
+  background-color: var(--color-canvas);
+  background-image:
+    radial-gradient(58% 90% at 6% 6%, rgba(245, 224, 196, 0.9) 0%, rgba(245, 224, 196, 0) 55%),
+    radial-gradient(60% 88% at 82% 2%, rgba(206, 191, 246, 0.8) 0%, rgba(206, 191, 246, 0) 60%),
+    radial-gradient(42% 70% at 98% 16%, rgba(249, 107, 238, 0.14) 0%, rgba(249, 107, 238, 0) 55%),
+    radial-gradient(52% 82% at 100% 96%, rgba(205, 228, 226, 0.6) 0%, rgba(205, 228, 226, 0) 55%),
+    radial-gradient(75% 100% at 42% -6%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 72%);
 }
 
 /* Remove tap delay / double-tap zoom on interactive controls */
@@ -175,7 +262,7 @@ canvas {
   min-width: 0; /* stops flex/grid children from blowing out the row width */
 }
 
-/* Tabular figures for stats/data */
+/* Tabular figures for stats/data (brand's quiet financial signal) */
 .tabular-nums,
 .font-mono {
   font-variant-numeric: tabular-nums;

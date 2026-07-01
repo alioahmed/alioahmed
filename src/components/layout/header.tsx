@@ -19,7 +19,7 @@ export function Header() {
         <Link
           href="/"
           aria-label={`${SITE_CONFIG.name} — home`}
-          className="text-ink font-mono text-sm font-semibold tracking-tight"
+          className="text-ink text-base font-semibold tracking-[-0.01em]"
         >
           {SITE_CONFIG.name}
         </Link>

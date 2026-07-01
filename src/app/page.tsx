@@ -1,19 +1,21 @@
 import type { Metadata } from 'next'
 import { createMetadata } from '@/lib/metadata'
 import { absoluteUrl } from '@/lib/site'
-import { PROFILE, pageDates } from '@/lib/content'
+import { PROFILE, PROFILES, pageDates } from '@/lib/content'
 import { generateGraphSchema, generateProfilePageSchema } from '@/lib/schema'
 import { JsonLd } from '@/components/seo/json-ld'
 import { Section } from '@/components/ui/section'
 import { Pill } from '@/components/ui/pill'
+import { Cta } from '@/components/ui/cta'
 
 export const metadata: Metadata = createMetadata({ path: '/' })
 
 const dates = pageDates('/')
 
 /**
- * Placeholder home — base scaffold only. Renders just enough to build + validate the SEO graph.
- * The real pages are designed and built later, with full context.
+ * Placeholder home — base + design-system scaffold. Renders just enough to build + validate the
+ * SEO graph and demonstrate the Stripe-inspired token system end-to-end (mesh, type, pills).
+ * The real content pages are designed and built later, with full context.
  */
 // The home IS the entity page → emit ProfilePage (mainEntity → #person). The layout owns the
 // Person/Org/WebSite entity graph; this is the page-scoped delta only.
@@ -25,20 +27,28 @@ const pageSchema = generateGraphSchema([
   }),
 ])
 
+const linkedin = PROFILES.find((p) => p.key === 'linkedin')?.url
+
 export default function HomePage() {
   return (
     <>
       <JsonLd data={pageSchema} />
-      <Section pad="lg">
+      <Section mesh pad="lg">
         <div className="max-w-3xl">
           <Pill variant="accent">{PROFILE.titleFull}</Pill>
-          <h1 className="text-ink mt-6 text-5xl font-extrabold tracking-[-0.03em] md:text-6xl">
-            {PROFILE.name}
-          </h1>
-          <p className="text-muted mt-4 text-lg">{PROFILE.oneLiner}</p>
-          <p className="text-faint mt-10 font-mono text-[11px] tracking-[0.18em] uppercase">
-            Foundation in place · pages built later
-          </p>
+          <h1 className="text-display-xxl text-ink mt-6">{PROFILE.name}</h1>
+          <p className="text-lead text-muted mt-5 max-w-2xl">{PROFILE.oneLiner}</p>
+          <div className="mt-9 flex flex-wrap items-center gap-3">
+            <Cta href={`mailto:${PROFILE.contact.email}`} variant="accent">
+              Get in touch
+            </Cta>
+            {linkedin && (
+              <Cta href={linkedin} variant="secondary" noArrow>
+                Connect on LinkedIn
+              </Cta>
+            )}
+          </div>
+          <p className="eyebrow text-faint mt-14">Foundation in place · pages built later</p>
         </div>
       </Section>
     </>

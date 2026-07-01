@@ -13,14 +13,14 @@ export function StatTile({
   value,
   label,
   size = 'md',
-  onInk = false,
+  onDark = false,
   rule = false,
   className,
 }: {
   value: string
   label: string
   size?: Size
-  onInk?: boolean
+  onDark?: boolean
   rule?: boolean
   className?: string
 }) {
@@ -28,14 +28,14 @@ export function StatTile({
     <div className={cn(rule && 'border-accent border-l-2 pl-4', className)}>
       <dd
         className={cn(
-          'font-mono font-semibold tracking-tight tabular-nums',
+          'font-light tracking-[-0.02em] tabular-nums',
           valueSize[size],
-          onInk ? 'text-on-ink' : 'text-ink',
+          onDark ? 'text-on-ink' : 'text-ink',
         )}
       >
         {value}
       </dd>
-      <dt className={cn('mt-1 text-sm', onInk ? 'text-on-ink-muted' : 'text-muted')}>{label}</dt>
+      <dt className={cn('mt-1 text-sm', onDark ? 'text-on-ink-muted' : 'text-muted')}>{label}</dt>
     </div>
   )
 }
