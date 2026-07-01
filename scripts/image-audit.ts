@@ -21,7 +21,7 @@ import * as path from "path";
 // actionable message instead of an opaque module-not-found crash at import.
 // The value is loaded lazily via dynamic import so the process only requires
 // the native binary on demand; the factory's type is taken from that import.
-type SharpFactory = typeof import("sharp");
+type SharpFactory = (typeof import("sharp"))["default"];
 let _sharp: SharpFactory | null = null;
 async function getSharp(): Promise<SharpFactory> {
   if (_sharp) return _sharp;

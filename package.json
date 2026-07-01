@@ -19,6 +19,7 @@
     "check:unused": "knip",
     "check:guardrails": "npx tsx scripts/check-guardrails.ts",
     "check:canonical-trace": "npx tsx scripts/check-canonical-trace.ts",
+    "check:entity": "npx tsx scripts/check-entity-consistency.ts",
     "gen:page-dates": "npx tsx scripts/generate-page-dates.ts",
     "gen:llms-full": "npx tsx scripts/generate-llms-full.ts",
     "check:last-updated": "npx tsx scripts/check-last-updated.ts",

@@ -15,7 +15,14 @@ Source of truth: `../canonical/00-WHO-ALI-IS.md` and `../BIO-SHEET-ALI.md`. Hono
 - Never the public words "vibe coding"; never claim from-scratch SWE/ML engineer depth.
 - Keep all three dimensions visible in any framing: **builds it · sells & runs it · trusted by**.
 
-Every outward-facing string flows from `src/lib/site.ts` + `src/lib/person.ts`. Edit there, not inline.
+Every outward-facing string flows from `src/lib/content/*` (esp. `profile.ts`) + `src/lib/site.ts`.
+Edit there, not inline.
+
+**Identity is ONE source of truth → mirror it everywhere (byte-identical).** `src/lib/content/profile.ts`
+is canonical; the site JSON-LD, Wikidata, LinkedIn, and every profile must match it exactly (a wrong
+handle or stale title suppresses entity fusion). When you change an identity field (title / domain /
+a handle / a new profile), propagate the SAME value to Wikidata + LinkedIn + the changed profile, and
+run `npm run check:entity`. Master sheet + Wikidata create-spec: **`docs/IDENTITY.md`**.
 
 ## Tech rules
 

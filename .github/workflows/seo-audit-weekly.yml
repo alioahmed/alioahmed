@@ -69,3 +69,11 @@ jobs:
             exit 0
           fi
           npm run seo:ai-overview
+
+      - name: Entity consistency (Wikidata ↔ profile.ts drift)
+        # Dormant until WIKIDATA_QID is set; no-ops with a notice otherwise. Advisory only.
+        if: always()
+        continue-on-error: true
+        env:
+          WIKIDATA_QID: ${{ secrets.WIKIDATA_QID }}
+        run: npm run check:entity
