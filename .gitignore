@@ -1,8 +1,48 @@
+# dependencies
 /node_modules
-/.next
-/out
+/.pnp
+.pnp.*
+.yarn/*
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
 /build
+
+# misc
 .DS_Store
-*.log
-.env*
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files — keep .env.example committed as the template
+.env
+.env*.local
+.env.development
+.env.production
+
+# vercel
 .vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# playwright screenshots
+.playwright-mcp
+
+# SEO ops: run artifacts + secrets (never commit)
+/logs
+/credentials
+
+# NOTE: src/.generated/ IS committed on purpose — page-dates.json is a build
+# input (sitemap/schema read it at build time on Vercel's shallow clone).

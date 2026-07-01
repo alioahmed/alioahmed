@@ -1,0 +1,71 @@
+# Weekly production SEO/GEO audit sweep (read-only production HTML audits).
+#
+# Complements the other CI:
+#   - freshness.yml      — pre-deploy gate (PR + push)
+#   - indexing-drift.yml — Sunday cron, GSC last-crawl vs our lastmod (dormant)
+#   - THIS                — Sunday cron, read-only production HTML audits
+#
+# These audits hit PRODUCTION (default BASE_URL = the configured site origin) —
+# they validate what crawlers actually see, and canonical/OG compare absolute
+# URLs that only resolve against the live domain. No Google credentials needed.
+#
+# Each audit runs even if an earlier one found issues (`if: always()`); a real
+# finding turns the run red. The AI-citation tracker is key-gated and never
+# fails the run. This whole workflow is meaningful only once the site is
+# DEPLOYED — until then it will report HTTP errors, which is expected.
+
+name: seo-audit-weekly
+
+on:
+  schedule:
+    - cron: "0 7 * * 0" # Sundays 07:00 UTC (1h after indexing-drift)
+  workflow_dispatch: {}
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Canonical audit (canonical == og:url == request URL)
+        run: npm run seo:canonicals
+
+      - name: OG-image audit (resolves at >=1200x630)
+        if: always()
+        run: npm run seo:og-images
+
+      - name: Internal-link graph (orphans / broken)
+        if: always()
+        run: npm run check:internal-links
+
+      - name: Answer-engine citation rank (AI Overview / Perplexity)
+        # Key-gated + informational: a missing key or "not cited" must not fail
+        # the run. Set these repo secrets to enable.
+        if: always()
+        continue-on-error: true
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$OPENROUTER_API_KEY" ] && [ -z "$SERPAPI_KEY" ] && [ -z "$OPENAI_API_KEY" ]; then
+            echo "::notice::No AI-engine key secret set — skipping ai-overview-track."
+            exit 0
+          fi
+          npm run seo:ai-overview

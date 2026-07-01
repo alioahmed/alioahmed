@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+#
+# Pre-push hook — keeps src/.generated/page-dates.json in sync before push.
+#
+# Why: sitemap.ts + the schema layer + the drift validator all consume this
+# snapshot (via src/lib/page-dates.ts → dates.ts). If it's stale relative to
+# git history, the freshness signals drift.
+#
+# Behaviour: if the snapshot is stale, the hook STAGES the regenerated file but
+# ABORTS the push so the committer reviews-and-commits explicitly. It does NOT
+# auto-commit (auto-commit races under concurrent pushes — abort-and-prompt is
+# the git-hook default).
+#
+# Setup (run once after cloning):
+#   git config core.hooksPath .githooks
+#
+# Bypass for emergency pushes (use sparingly — CI is the source of truth):
+#   git push --no-verify
+
+set -e
+
+if [ ! -f scripts/generate-page-dates.ts ]; then
+  exit 0
+fi
+
+echo "[pre-push] Checking the freshness chain is wired…"
+npm run --silent check:last-updated
+
+echo "[pre-push] Regenerating freshness snapshot…"
+npm run --silent gen:page-dates
+
+GENERATED_FILES=(
+  src/.generated/page-dates.json
+)
+
+if git diff --quiet "${GENERATED_FILES[@]}" 2>/dev/null; then
+  echo "[pre-push] freshness snapshot already up to date."
+  exit 0
+fi
+
+# Stale — stage it so the diff is visible in `git status`, then abort.
+git add "${GENERATED_FILES[@]}"
+echo ""
+echo "[pre-push] ABORTED — the freshness snapshot was stale."
+echo ""
+echo "  The regenerated file has been STAGED for you. Review it, then:"
+echo ""
+echo "    git commit -m 'chore(sitemap): regenerate page-dates snapshot'"
+echo "    git push"
+echo ""
+echo "  Auto-committing inside the hook is disabled (it races under concurrent pushes)."
+exit 1

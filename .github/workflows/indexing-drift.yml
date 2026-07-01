@@ -1,0 +1,66 @@
+# Weekly indexing-drift monitor (DORMANT until GSC access is configured).
+#
+# Compares Google's last crawl time (GSC URL Inspection API) against the
+# lastmod we emit for each tier-1 URL. If Google distrusts our lastmod or a
+# page falls into crawl jail, we want to know within a week.
+#
+# Setup (one-time, requires a GitHub Actions secret):
+#   1. Google Cloud Console → the service account that owns
+#      credentials/google-service-account.json locally.
+#   2. Add its JSON key as repo secret GSC_SERVICE_ACCOUNT_JSON.
+#   3. Add the SA email as an Owner in Search Console → Users and permissions.
+# Until the secret is set, this workflow NO-OPS gracefully: the materialise
+# step exits 0 with a notice, and check-indexing-drift.ts itself also no-ops
+# when the credentials file is absent.
+
+name: indexing-drift
+
+on:
+  schedule:
+    - cron: "0 6 * * 0" # Sundays 06:00 UTC
+  workflow_dispatch: {}
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Materialise GSC service account JSON (no-op if secret absent)
+        id: cred
+        env:
+          GSC_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ -z "$GSC_JSON" ]; then
+            echo "::notice::GSC_SERVICE_ACCOUNT_JSON secret not set — drift check will no-op."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          mkdir -p credentials
+          printf '%s' "$GSC_JSON" > credentials/google-service-account.json
+          chmod 600 credentials/google-service-account.json
+          echo "skip=false" >> "$GITHUB_OUTPUT"
+
+      - name: Run indexing-drift check
+        if: steps.cred.outputs.skip != 'true'
+        run: npm run check:indexing-drift
+
+      - name: Cleanup credentials
+        if: always()
+        run: rm -f credentials/google-service-account.json

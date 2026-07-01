@@ -1,0 +1,106 @@
+# Freshness pipeline CI gate.
+#
+# Pre-push hooks are bypassable (`git push --no-verify`, commits via the GitHub
+# web UI). This workflow is the source of truth: every PR and every push to the
+# default branch is gated through these checks.
+#
+# Steps:
+#   0. check:guardrails — truth-discipline content gate (source only, runs first).
+#   1. check:last-updated — the git-derived freshness chain is wired.
+#   2. gen:page-dates — regenerate the snapshot (informational; drift is caught
+#      after the build, not by byte-comparing the JSON).
+#   3. next build — must succeed type-clean.
+#   4. boot the built server, then:
+#      - check:freshness-drift — JSON-LD dateModified + sitemap lastmod agree.
+#      - check:jsonld-validity — Google Rich Results required fields.
+#      - check:answer-structure — GEO/AEO structure (advisory until content ships).
+#      - check:internal-links — fail on orphan pages.
+#
+# The IndexNow post-deploy job is intentionally DEFERRED until the site is
+# deployed and an IndexNow key exists (see scripts/indexnow-on-change.ts).
+
+name: freshness
+
+on:
+  pull_request:
+    branches: [main, rebuild-2026]
+  push:
+    branches: [main, rebuild-2026]
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  freshness-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout (full history — required for git log --follow)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Guardrails — truth-discipline content gate (source only, no server)
+        run: npm run check:guardrails
+
+      - name: Lint — the git-derived freshness chain is wired
+        run: npm run check:last-updated
+
+      - name: Regenerate freshness snapshot (informational only)
+        # We DON'T `git diff --exit-code`: byte-identical reproducibility across
+        # machines/git versions is brittle. The real invariant — "the snapshot
+        # agrees with the rendered HTML" — is what check:freshness-drift asserts
+        # after the build.
+        run: npm run gen:page-dates
+
+      - name: Build
+        run: npm run build
+
+      - name: Start production server
+        run: |
+          npm run start > /tmp/next-server.log 2>&1 &
+          echo $! > /tmp/next-server.pid
+          for i in $(seq 1 60); do
+            if curl --silent --fail --max-time 2 http://localhost:3000/sitemap.xml > /dev/null; then
+              echo "Server ready after ${i}s"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "::error::Server failed to start within 60s"
+          echo "--- server log ---"
+          cat /tmp/next-server.log
+          exit 1
+
+      - name: Validate freshness drift (JSON-LD / sitemap agree)
+        run: BASE_URL=http://localhost:3000 npm run check:freshness-drift
+
+      - name: Validate JSON-LD required fields (Google Rich Results)
+        run: BASE_URL=http://localhost:3000 npm run check:jsonld-validity
+
+      - name: Validate answer-engine structure (advisory on the pre-content scaffold)
+        # The foundation home page has no FAQ/list yet, so this is INFORMATIONAL
+        # until real content pages ship. Flip continue-on-error off once the
+        # first content pages (work/about/writing) are live and structured.
+        continue-on-error: true
+        run: BASE_URL=http://localhost:3000 npm run check:answer-structure
+
+      - name: Validate internal-link equity — fail on orphan pages
+        run: BASE_URL=http://localhost:3000 npm run check:internal-links
+
+      - name: Stop server
+        if: always()
+        run: |
+          if [ -f /tmp/next-server.pid ]; then
+            kill $(cat /tmp/next-server.pid) || true
+          fi

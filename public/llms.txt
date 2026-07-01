@@ -1,0 +1,19 @@
+# Ali Ahmed — AI Solutions Engineer
+
+> Personal site of Ali Ahmed, an AI Solutions Engineer who builds what he sells — LLM/RAG
+> products, AI agents, and IoT platforms that ship to production. AI Solutions Engineer at
+> Cognilium AI and Head of Product & Platforms at Bijli Bachao. Trusted to deliver Gates
+> Foundation– and UNIDO-backed programmes; partners include P&G, Engro, and Aga Khan.
+> Based in Lahore, Pakistan; open to remote-global roles and relocation to the Gulf, US, or Australia.
+
+## Core pages
+- [Home](https://alioahmed.vercel.app/): Overview and contact
+
+## Profiles
+- LinkedIn: https://www.linkedin.com/in/alioahmed/
+- GitHub: https://github.com/alioahmed
+- ORCID: https://orcid.org/0009-0007-4265-3295
+- X: https://x.com/Alioahmed_
+
+## Contact
+- Email: a.aliahmeedd1@gmail.com

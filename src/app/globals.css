@@ -1,0 +1,123 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+/* ------------------------------------------------------------------ *
+ * alioahmed design tokens — ONE clean system (light theme).
+ * Register: clean, evidence-first, senior-credibility.
+ * Tailwind v4 CSS-first: tokens here generate utilities (bg-accent, text-ink, rounded-card…).
+ * The brand accent is intentionally isolated to a single variable so it can be retuned in the
+ * design phase without touching anything else.
+ * ------------------------------------------------------------------ */
+@theme inline {
+  /* Fonts — wired to the next/font CSS variables set on <html>. */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, 'SF Mono', monospace;
+
+  /* Neutrals / ink */
+  --color-ink: #0b0c0f; /* strong headings */
+  --color-body: #383d45; /* body copy */
+  --color-muted: #6b7280; /* secondary text */
+  --color-faint: #676d77; /* tertiary / captions — WCAG AA on canvas + surface */
+
+  /* Surfaces */
+  --color-canvas: #ffffff; /* page background */
+  --color-surface: #fafbfc; /* lifted panels / alt sections (kept light so AA text holds) */
+  --color-surface-2: #eef0f4; /* deeper panels */
+  --color-hairline: #e6e8ec; /* borders / dividers */
+
+  /* Accent — PROVISIONAL (single swap point). Refined indigo. */
+  --color-accent: #4338ca;
+  --color-accent-hover: #3730a3;
+  --color-accent-soft: #eef0ff;
+  --color-accent-ink: #ffffff; /* text on accent */
+
+  /* On-ink (for dark CTA panels / footer) */
+  --color-on-ink: #f4f5f7;
+  --color-on-ink-muted: #aab0ba;
+
+  /* Semantic */
+  --color-success: #108c3d;
+  --color-warning: #b7791f;
+  --color-error: #d23b3b;
+  --color-info: #2563eb;
+
+  /* Radius scale */
+  --radius-hairline: 1px;
+  --radius-sharp: 4px;
+  --radius-standard: 6px;
+  --radius-card: 8px;
+  --radius-featured: 12px;
+  --radius-full: 9999px;
+
+  /* Shadow scale (soft, light-theme appropriate) */
+  --shadow-border: 0 0 0 1px rgba(11, 12, 15, 0.06);
+  --shadow-level-1: 0 1px 2px rgba(11, 12, 15, 0.05);
+  --shadow-level-2: 0 2px 6px rgba(11, 12, 15, 0.06);
+  --shadow-level-3: 0 6px 20px rgba(11, 12, 15, 0.08);
+  --shadow-level-4: 0 16px 40px rgba(11, 12, 15, 0.1);
+
+  /* Motion */
+  --motion-instant: 80ms;
+  --motion-fast: 150ms;
+  --motion-base: 200ms;
+  --motion-slow: 300ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Layout */
+  --container-max: 1120px;
+}
+
+/* ------------------------------------------------------------------ *
+ * Base layer
+ * ------------------------------------------------------------------ */
+:root {
+  color-scheme: light only;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-body);
+  font-family: var(--font-sans);
+  font-feature-settings: 'ss01', 'cv11', 'liga';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Tabular figures for stats/data */
+.tabular-nums,
+.font-mono {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}
+
+/* Accessible double-ring focus */
+*:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--color-canvas),
+    0 0 0 4px var(--color-accent);
+  border-radius: var(--radius-sharp);
+}
+
+::selection {
+  background-color: var(--color-accent-soft);
+  color: var(--color-ink);
+}
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
