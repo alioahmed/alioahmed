@@ -29,6 +29,7 @@ export const viewport: Viewport = {
   themeColor: '#0b0c0f',
   width: 'device-width',
   initialScale: 1,
+  viewportFit: 'cover',
 }
 
 export const metadata: Metadata = {
@@ -83,7 +84,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${geistMono.variable}`}>
-      <body className="bg-canvas text-body min-h-dvh font-sans antialiased">
+      <body className="bg-canvas text-body min-h-svh font-sans antialiased">
         <JsonLd data={defaultGraph()} />
         <a
           href="#main"

@@ -10,21 +10,24 @@ import { PROFILES, FOOTER_LINKS } from '@/lib/content'
 export function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="border-hairline bg-surface border-t">
+    <footer className="pb-safe border-hairline bg-surface border-t">
       <Container className="grid gap-8 py-12 md:grid-cols-[1fr_auto]">
         <div>
           <p className="text-ink font-mono text-sm font-semibold">{SITE_CONFIG.name}</p>
           <p className="text-muted mt-1 text-sm">
             {SITE_CONFIG.title} · {SITE_CONFIG.location.display}
           </p>
-          <nav aria-label="Profiles" className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          <nav
+            aria-label="Profiles"
+            className="mt-3 flex flex-wrap gap-x-1 gap-y-1 text-sm sm:mt-4"
+          >
             {PROFILES.map((p) => (
               <a
                 key={p.key}
                 href={p.url}
                 target="_blank"
                 rel="noreferrer noopener me"
-                className="text-muted hover:text-ink transition-colors"
+                className="text-muted hover:text-ink hover:bg-surface -mx-1 inline-flex min-h-9 min-w-11 items-center justify-center rounded-[var(--radius-sharp)] px-3 transition-colors"
               >
                 {p.label}
               </a>

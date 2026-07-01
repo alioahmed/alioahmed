@@ -24,10 +24,11 @@ const buttonVariants = cva(
         link: 'text-accent underline-offset-4 hover:underline',
       },
       size: {
-        sm: 'h-8 px-3 text-sm',
-        md: 'h-10 px-4 text-sm',
+        // md/lg meet the 44px mobile touch-target minimum; sm is for dense desktop UIs only.
+        sm: 'h-9 px-3 text-sm',
+        md: 'h-11 px-4 text-sm',
         lg: 'h-12 px-6 text-base',
-        icon: 'h-10 w-10 rounded-[var(--radius-full)]',
+        icon: 'h-11 w-11 rounded-[var(--radius-full)]',
       },
     },
     defaultVariants: { variant: 'primary', size: 'md' },

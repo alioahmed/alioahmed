@@ -39,6 +39,23 @@ run `npm run check:entity`. Master sheet + Wikidata create-spec: **`docs/IDENTIT
 `schema.ts` graph, `metadata.ts`, `robots.ts` (allow-all), `sitemap.ts` (real per-route dates —
 never fake-uniform), `manifest.ts`, generated OG/icons, `api/indexnow`, `llms.txt`.
 
+## Mobile-first (production-grade — non-negotiable)
+
+Design for the phone first, add `sm:`/`md:`/`lg:` upward. Never author desktop-first.
+
+- **Units:** full-height sections use `min-h-svh` (NOT `min-h-screen`/`100vh` — the mobile-toolbar bug).
+- **Touch targets:** primary controls ≥44px (`Button`/`Cta` md = `h-11`). Small text-link clusters get
+  `min-h-9 min-w-11` hit areas. Never ship a tap target < 24px.
+- **Safe-area:** `viewport-fit: cover` is set; apply `.pt-safe`/`.pb-safe` to sticky/fixed edges and use
+  the `.px-gutter` container class (safe-area-aware responsive padding). Raw `env()` only with `max()`.
+- **No horizontal scroll:** no fixed px widths; `@layer base` guards (`img/video max-w`, `*{min-width:0}`,
+  `html{overflow-x:clip}`) are in globals.css — keep them. Test at 360/375/390 px, portrait + landscape.
+- **Zoom stays ON** (a11y): never set `maximumScale`/`userScalable`. Inputs are ≥16px on touch (no iOS zoom).
+- **Nav:** mobile uses the accessible `MobileMenu` drawer (focus-trap, Escape, scroll-lock, `role=dialog`).
+- **Images (content phase):** `next/image` with explicit `sizes` + `priority` on the LCP image.
+- **Test mobile, not just desktop:** run Lighthouse `--form-factor=mobile`. Targets: LCP ≤2.5s (field),
+  INP ≤200ms, CLS ≤0.1. Verify no horizontal scroll and the drawer is keyboard/SR usable.
+
 ## Known stack decisions (don't "fix" these)
 
 - **ESLint is pinned to 9, not 10.** ESLint 10 removed `context.getFilename`, which the

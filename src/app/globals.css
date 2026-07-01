@@ -78,6 +78,10 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: clip; /* guard: nothing should scroll the page horizontally on mobile */
+  scroll-padding-top: 5rem; /* anchor jumps clear the sticky header */
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -87,6 +91,88 @@ body {
   font-feature-settings: 'ss01', 'cv11', 'liga';
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* Overridable defaults live in @layer base so Tailwind utilities still win over them. */
+@layer base {
+  /* Modern text wrapping — better line balance on small screens */
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Responsive-media guard (top cause of horizontal scroll). Not svg — icons are sized explicitly. */
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Stops flex/grid children from blowing out the row width → no horizontal scroll */
+  * {
+    min-width: 0;
+  }
+
+  /* iOS zooms the page when focusing a control < 16px. Touch devices only, so desktop can be dense. */
+  @media (pointer: coarse) {
+    input,
+    select,
+    textarea {
+      font-size: max(16px, 1rem);
+    }
+  }
+}
+
+/* Remove tap delay / double-tap zoom on interactive controls */
+a,
+button,
+[role='button'],
+label,
+summary {
+  touch-action: manipulation;
+}
+
+/* Responsive page gutter with landscape safe-area (notch/gesture-bar aware) */
+.px-gutter {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+@media (min-width: 640px) {
+  .px-gutter {
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
+  }
+}
+@media (min-width: 1024px) {
+  .px-gutter {
+    padding-left: max(2rem, env(safe-area-inset-left));
+    padding-right: max(2rem, env(safe-area-inset-right));
+  }
+}
+
+/* Safe-area helpers for sticky/fixed chrome (header top, footer/CTA bottom) */
+.pt-safe {
+  padding-top: env(safe-area-inset-top);
+}
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Overflow guards — the top causes of accidental horizontal scroll on mobile */
+img,
+video,
+svg,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+* {
+  min-width: 0; /* stops flex/grid children from blowing out the row width */
 }
 
 /* Tabular figures for stats/data */

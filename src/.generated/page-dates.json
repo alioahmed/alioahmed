@@ -15,13 +15,13 @@
   "src/lib/content/index.ts": "2026-07-01T12:11:27+05:00",
   "src/lib/content/institutions.ts": "2026-07-01T12:11:27+05:00",
   "src/lib/content/navigation.ts": "2026-07-01T12:11:27+05:00",
-  "src/lib/content/profile.ts": "2026-07-01T12:11:27+05:00",
+  "src/lib/content/profile.ts": "2026-07-01T13:07:19+05:00",
   "src/lib/content/projects.ts": "2026-07-01T12:11:27+05:00",
   "src/lib/content/stats.ts": "2026-07-01T12:11:27+05:00",
   "src/lib/metadata.ts": "2026-07-01T12:11:27+05:00",
   "src/lib/page-dates.ts": "2026-07-01T12:11:27+05:00",
   "src/lib/schema.ts": "2026-07-01T12:11:27+05:00",
-  "src/lib/site.ts": "2026-07-01T12:11:27+05:00",
+  "src/lib/site.ts": "2026-07-01T13:07:19+05:00",
   "src/lib/types.ts": "2026-07-01T12:11:27+05:00",
   "src/lib/utils.ts": "2026-07-01T12:11:27+05:00"
 }

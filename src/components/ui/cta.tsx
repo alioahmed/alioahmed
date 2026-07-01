@@ -21,7 +21,8 @@ const ctaVariants = cva(
         outline: 'border border-hairline text-ink hover:bg-surface',
       },
       size: {
-        md: 'h-10 px-5 text-sm',
+        // Both meet the 44px mobile touch-target minimum.
+        md: 'h-11 px-5 text-sm',
         lg: 'h-12 px-6 text-base',
       },
     },
