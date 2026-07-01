@@ -15,7 +15,9 @@
 | Employer | **Cognilium AI** (+ Head of Product & Platforms @ **Bijli Bachao**) |
 | Location | **Lahore, Pakistan** |
 | ORCID | **0009-0007-4265-3295** |
-| Website | `<YOUR-DOMAIN>` *(flip from `alioahmed.vercel.app` when the domain is chosen)* |
+| Website | **https://alioahmed.com** |
+| Email | **ali@alioahmed.com** (primary) · **hello@alioahmed.com** (general) — both forward to Gmail |
+| Phone / WhatsApp | **+92 321 4309269** |
 | Wikidata QID | `Q________` *(fill in once created, then add to `PROFILES` in profile.ts + `WIKIDATA_QID` env)* |
 
 ---
@@ -43,7 +45,7 @@ matching item from the dropdown (don't hand-type Q-numbers you're unsure of — 
 | 8 | educated at | **P69** | search **"University of Central Punjab"** | ucp.edu.pk |
 | 9 | languages spoken/written | **P1412** | **English** → `Q1860` *(confirmed)*; **Urdu** → `Q1617` | — |
 | 10 | residence / work location | **P937** (work location) | search **"Lahore"** (`Q11739`) | — |
-| 11 | official website | **P856** | `<YOUR-DOMAIN>` | (the site itself) |
+| 11 | official website | **P856** | `https://alioahmed.com` | (the site itself) |
 | 12 | ORCID iD | **P496** | `0009-0007-4265-3295` | https://orcid.org/0009-0007-4265-3295 |
 | 13 | LinkedIn personal profile ID | **P6634** | `alioahmed` | https://www.linkedin.com/in/alioahmed/ |
 | 14 | GitHub username | **P2037** | `alioahmed` | https://github.com/alioahmed |

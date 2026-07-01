@@ -37,8 +37,13 @@ export const PROFILE = {
     'plus fractional AI-delivery consulting.',
 
   contact: {
-    email: 'a.aliahmeedd1@gmail.com',
+    // Primary public email — professional domain address (forwards to Ali's Gmail).
+    email: 'ali@alioahmed.com',
+    // General/inbound alias (contact form, "say hello") — also forwards to Gmail.
+    emailGeneral: 'hello@alioahmed.com',
     phone: '+92-321-4309269',
+    /** WhatsApp — same number as phone. Raw intl digits for wa.me links: `923214309269`. */
+    whatsapp: '+923214309269',
     /** Booking URL — add when one exists; CTAs fall back to email until then. */
     booking: '',
   },

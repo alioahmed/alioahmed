@@ -7,7 +7,7 @@
 > Based in Lahore, Pakistan; open to remote-global roles and relocation to the Gulf, US, or Australia.
 
 ## Core pages
-- [Home](https://alioahmed.vercel.app/): Overview and contact
+- [Home](https://alioahmed.com/): Overview and contact
 
 ## Profiles
 - LinkedIn: https://www.linkedin.com/in/alioahmed/
@@ -16,4 +16,4 @@
 - X: https://x.com/Alioahmed_
 
 ## Contact
-- Email: a.aliahmeedd1@gmail.com
+- Email: ali@alioahmed.com

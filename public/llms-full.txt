@@ -1,7 +1,7 @@
 # Ali Ahmed — AI Solutions Engineer
 > A founder-grade operator who ships production-grade AI products and owns the business behind them.
 
-Canonical site: https://alioahmed.vercel.app
+Canonical site: https://alioahmed.com
 Location: Lahore, Pakistan
 One-liner: I build what I sell — and sell what I build.
 Entity anchors (must co-occur with the name): Cognilium AI, Bijli Bachao
@@ -54,7 +54,7 @@ Knows about (expertise index): Large Language Models, Retrieval-Augmented Genera
 ### Head of Product & Platforms — Bijli Bachao (Oct 2025 – present)
   Pakistan
   Designed, built, and owns three live SaaS/IoT platforms covering Pakistan’s commercial-energy lifecycle — built to international IEC engineering standards.
-  - Wattey — real-time IoT electricity monitoring (~1.04 GWh tracked across 22 meters in 8 industrial sectors).
+  - Wattey — real-time IoT electricity monitoring (~1.04 GWh tracked across 22 meters in 8 sectors).
   - Solar Performance Cloud — independent multi-brand, string-level solar monitoring (56 sites · 70 inverters · 698 PV strings · 785 MWh tracked).
   - TenantBill — OCR-verified multi-tenant billing, live in a real mall (74 tenants · 469 meters).
   - Running real Pakistani factories, solar plants, and shopping malls — ~3 MW and growing. Founded by Engr. Reyyan Niaz Khan, an energy-sector pioneer.
@@ -118,9 +118,9 @@ Knows about (expertise index): Large Language Models, Retrieval-Augmented Genera
   Cognilium AI · AI Product Manager · production · 2026
   An agentic legal-AI system that reviews contracts against a customer’s own playbook and returns GREEN/ORANGE/RED redlines — deployed in the customer’s own cloud, not as SaaS.
   - 18+ specialised AI agents plus an orchestrator on LangGraph + Google ADK, LLM-agnostic.
-  - Turns ~30 hours of MSA review into ~30 minutes; 40–50 findings per contract.
+  - Turns ~30 hours of MSA review into ~30 minutes; 40–50 findings per MSA.
   - Built the go-to-market website end-to-end (56 pages, 50 components).
-  Metrics: 18+ AI agents · 30h → 30m per contract review
+  Metrics: 18+ AI agents · 30h → 30m per MSA review
   Stack: LangGraph, Google ADK, Azure OpenAI, Next.js
 
 ### VORTA — Enterprise RAG assistant at 92% first-call resolution.
@@ -148,7 +148,7 @@ Knows about (expertise index): Large Language Models, Retrieval-Augmented Genera
 ### Wattey — Real-time IoT electricity monitoring for industry.
   Bijli Bachao · Head of Product & Platforms · live
   Real-time grid-consumption monitoring for Pakistani factories, mills, malls, and hotels — built to IEC standards.
-  - ~1.04 GWh tracked across 22 meters in 8 industrial sectors.
+  - ~1.04 GWh tracked across 22 meters in 8 sectors.
   Metrics: ~1.04 GWh monitored
   Stack: IoT, SaaS, Time-series
 
@@ -254,8 +254,8 @@ The AI-application layer — LLMs, RAG, AI agents, evals, vector databases, and 
 
 ## Contact
 
-- Email: a.aliahmeedd1@gmail.com
+- Email: ali@alioahmed.com
 - Phone: +92-321-4309269
 
 ---
-Generated from the structured content layer at https://alioahmed.vercel.app. Facts trace to the canonical bio; render, don't reword.
+Generated from the structured content layer at https://alioahmed.com. Facts trace to the canonical bio; render, don't reword.

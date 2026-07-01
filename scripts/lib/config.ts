@@ -16,7 +16,7 @@ import * as path from "path";
 
 const PROJECT_ROOT = path.resolve(__dirname, "..", "..");
 
-const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://alioahmed.vercel.app").replace(
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://alioahmed.com").replace(
   /\/$/,
   "",
 );
@@ -24,7 +24,7 @@ const HOST = (() => {
   try {
     return new URL(SITE_URL).host;
   } catch {
-    return "alioahmed.vercel.app";
+    return "alioahmed.com";
   }
 })();
 

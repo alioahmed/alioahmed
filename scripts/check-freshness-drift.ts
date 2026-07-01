@@ -17,7 +17,7 @@
  *
  * Usage:
  *   npx tsx scripts/check-freshness-drift.ts                    # http://localhost:3000
- *   BASE_URL=https://alioahmed.vercel.app npx tsx scripts/check-freshness-drift.ts
+ *   BASE_URL=https://alioahmed.com npx tsx scripts/check-freshness-drift.ts
  *
  * Exit: 0 = all expected signals present & agreeing · 1 = drift · 2 = crash.
  */

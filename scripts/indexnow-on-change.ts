@@ -29,7 +29,7 @@
  *
  * Usage:
  *   npx tsx scripts/indexnow-on-change.ts
- *   BASE_URL=https://alioahmed.vercel.app npx tsx scripts/indexnow-on-change.ts
+ *   BASE_URL=https://alioahmed.com npx tsx scripts/indexnow-on-change.ts
  *   DRY_RUN=1 npx tsx scripts/indexnow-on-change.ts       # don't actually POST
  */
 

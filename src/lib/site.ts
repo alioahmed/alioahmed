@@ -6,7 +6,7 @@
 
 import { PROFILE, BIO, PROFILES, SAME_AS as PROFILE_SAME_AS } from '@/lib/content/profile'
 
-const FALLBACK_URL = 'https://alioahmed.vercel.app'
+const FALLBACK_URL = 'https://alioahmed.com'
 
 /** Absolute site origin, no trailing slash. Env-driven so the domain can flip later. */
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? FALLBACK_URL).replace(/\/$/, '')
