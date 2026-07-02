@@ -28,7 +28,24 @@ export function routeToSourceFile(route: string): string {
   return clean === '' ? 'src/app/page.tsx' : `src/app${clean}/page.tsx`
 }
 
-/** Git-derived modified date for a route (via its page.tsx), or null if absent. */
+/**
+ * Git-derived modified date for a route (via its page.tsx), or null if absent.
+ * Case-study routes (/work/<slug>) render through the dynamic [slug] template, so their
+ * honest date is the NEWEST of the template and that slug's content file — the page really
+ * does change when either changes, and each slug keeps a distinct date (never fake-uniform).
+ */
 export function gitDateForRoute(route: string): string | null {
-  return gitDateForFile(routeToSourceFile(route))
+  const direct = gitDateForFile(routeToSourceFile(route))
+  if (direct) return direct
+
+  const caseStudy = route.match(/^\/work\/([^/]+)$/)
+  if (caseStudy) {
+    const dates = [
+      gitDateForFile('src/app/work/[slug]/page.tsx'),
+      gitDateForFile(`src/lib/content/case-studies/${caseStudy[1]}.ts`),
+    ].filter((d): d is string => d !== null)
+    if (dates.length > 0) return dates.sort().at(-1) ?? null
+  }
+
+  return null
 }

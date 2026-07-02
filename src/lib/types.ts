@@ -144,6 +144,62 @@ export interface BioVariants {
   long: string
 }
 
+/** A renderable block inside a case study — the typed long-form layer. */
+export type CaseBlock =
+  | { kind: 'text'; heading?: string; paras: string[] }
+  | { kind: 'bullets'; heading?: string; intro?: string; items: string[] }
+  | { kind: 'stats'; heading?: string; stats: Metric[] }
+  | {
+      kind: 'cards'
+      heading?: string
+      cards: { title: string; body: string; bullets?: string[]; href?: string }[]
+    }
+
+/**
+ * A deep-dive work page (/work/[slug]). The required fields ENCODE the answer-engine gate:
+ * `answerCapsule` (20–70 words, link-free), `questionHeading` (contains "?"), and at least one
+ * bullets block (the <ul>). Copy compiles from canonical/*.md only — locked titles verbatim.
+ */
+export interface CaseStudy {
+  slug: string
+  /** Card/hero eyebrow, e.g. "Cognilium AI · AI products". */
+  eyebrow: string
+  /** H1. */
+  title: string
+  /** Metadata title (layout template appends "· Ali Ahmed"). */
+  seoTitle: string
+  seoDescription: string
+  /** Ali's LOCKED title on this chapter — never reword. */
+  role: string
+  dateLabel: string
+  status?: 'live' | 'production' | 'pre-launch' | 'concluded'
+  /** 20–70 words, LINK-FREE — the early answer capsule the AEO gate requires. */
+  answerCapsule: string
+  /** An H2 containing "?" — the question heading the AEO gate requires. */
+  questionHeading: string
+  /** Hero figures (StatTile row). */
+  heroStats: Metric[]
+  sections: CaseBlock[]
+  /** Page-scoped Q&A (≥2) — rendered + FAQPage schema. */
+  faqs: Faq[]
+  /** In-content related links (the internal-link graph edges). */
+  related: { slug: string; label: string }[]
+  /** PROJECTS slugs this page is about → SoftwareApplication/CreativeWork schema nodes. */
+  projectSlugs?: string[]
+  /** Live product link, e.g. paralegent.ai. */
+  external?: { label: string; href: string }
+  /** Featured on home. */
+  featured?: boolean
+}
+
+/** Where/how Ali can engage — the recruiter-facing availability block. */
+export interface Availability {
+  headline: string
+  modes: string[]
+  regions: string[]
+  roles: string[]
+}
+
 export interface NavItem {
   label: string
   href: string

@@ -33,7 +33,8 @@
   --color-accent: #533afd;
   --color-accent-hover: #4434d4; /* deep — hover */
   --color-accent-press: #2e2b8c; /* pressed */
-  --color-accent-strong: #665efd; /* soft-bright — UI accents */
+  --color-accent-strong: #665efd; /* soft-bright — UI accents (light surfaces only) */
+  --color-accent-bright: #8b83fe; /* accent text on dark — AA (4.9:1) on brand-dark; matches OG art */
   --color-accent-soft: #ece9fe; /* pale wash — pill bg / selection */
   --color-accent-ink: #ffffff; /* text on indigo */
 

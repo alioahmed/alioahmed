@@ -89,10 +89,22 @@ export const CONFIG = {
 /**
  * Minimal static-page fallback for pages.ts getAuditPages() when the sitemap
  * is unreachable. The sitemap is the real source of truth (it grows with the
- * content phase); this is only a loud last resort. Currently just the home
- * route (the one live route in navigation.ts).
+ * content phase); this is only a loud last resort. Keep in lockstep with the
+ * live routes in navigation.ts.
  */
-export const STATIC_PAGES: string[] = ["/"];
+export const STATIC_PAGES: string[] = [
+  "/",
+  "/work",
+  "/about",
+  "/contact",
+  "/work/cognilium",
+  "/work/paralegent",
+  "/work/bijli-bachao",
+  "/work/wonder-women",
+  "/work/startup-ecosystem",
+  "/work/circle-gates",
+  "/work/build-buy-software",
+];
 
 /**
  * Representative pages for the SAMPLE-based audits (answer-structure,
@@ -100,7 +112,7 @@ export const STATIC_PAGES: string[] = ["/"];
  * sitemap. Keep in lockstep with what is actually LIVE. As content ships,
  * add the new routes here.
  */
-export const SAMPLE_PAGES: string[] = ["/"];
+export const SAMPLE_PAGES: string[] = [...STATIC_PAGES];
 
 /**
  * Ali Ahmed's niche/entity terms — used by the (dormant) AI-visibility trackers
@@ -115,6 +127,9 @@ export const NICHE_TERMS: string[] = [
   "RAG",
   "AI agents",
   "alioahmed",
+  "Paralegent",
+  "Wattey",
+  "Wonder Women",
 ];
 
 export function getAllPages(): string[] {

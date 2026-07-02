@@ -69,7 +69,7 @@ export function SectionHeading({
   return (
     <div className={cn('max-w-2xl', className)}>
       {eyebrow && (
-        <p className={cn('eyebrow mb-3', onDark ? 'text-accent-strong' : 'text-accent')}>
+        <p className={cn('eyebrow mb-3', onDark ? 'text-accent-bright' : 'text-accent')}>
           {eyebrow}
         </p>
       )}

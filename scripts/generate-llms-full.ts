@@ -30,7 +30,9 @@ import {
   STATS,
   FAQS,
   PROFILES,
+  CASE_STUDIES,
 } from "@/lib/content";
+import type { CaseBlock } from "@/lib/types";
 
 const SITE = CONFIG.siteUrl;
 
@@ -41,6 +43,31 @@ function metricLine(metrics?: { value: string; label: string }[]): string {
 
 function section(title: string): string {
   return `\n## ${title}\n\n`;
+}
+
+/** Flatten a case-study content block to plain text (render, never reword). */
+function renderBlock(block: CaseBlock): string {
+  const out: string[] = [];
+  if ("heading" in block && block.heading) out.push(`  ${block.heading}:\n`);
+  switch (block.kind) {
+    case "text":
+      for (const p of block.paras) out.push(`  ${p}\n`);
+      break;
+    case "bullets":
+      if (block.intro) out.push(`  ${block.intro}\n`);
+      for (const item of block.items) out.push(`  - ${item}\n`);
+      break;
+    case "stats":
+      out.push(metricLine(block.stats));
+      break;
+    case "cards":
+      for (const c of block.cards) {
+        out.push(`  - ${c.title}: ${c.body}\n`);
+        for (const b of c.bullets ?? []) out.push(`    - ${b}\n`);
+      }
+      break;
+  }
+  return out.join("");
 }
 
 function build(): string {
@@ -101,6 +128,19 @@ function build(): string {
     for (const h of p.highlights ?? []) out.push(`  - ${h}\n`);
     out.push(metricLine(p.metrics));
     if (p.stack) out.push(`  Stack: ${p.stack.join(", ")}\n`);
+    out.push("\n");
+  }
+
+  // Case studies (deep corpus) --------------------------------------------
+  out.push(section("Case studies (deep dives)"));
+  for (const cs of CASE_STUDIES) {
+    out.push(`### ${cs.title} — ${cs.eyebrow}\n`);
+    out.push(`  URL: ${SITE}/work/${cs.slug}\n`);
+    out.push(`  Role: ${cs.role} (${cs.dateLabel})${cs.status ? ` · ${cs.status}` : ""}\n`);
+    out.push(`  ${cs.answerCapsule}\n`);
+    out.push(metricLine(cs.heroStats));
+    for (const block of cs.sections) out.push(renderBlock(block));
+    for (const f of cs.faqs) out.push(`  Q: ${f.question}\n  A: ${f.answer}\n`);
     out.push("\n");
   }
 

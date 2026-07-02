@@ -137,16 +137,21 @@ export function generateWebSiteSchema(): SchemaNode {
   }
 }
 
-/** WebPage — a standard content page, part of the WebSite, about the Person. */
+/**
+ * WebPage — a standard content page, part of the WebSite, about the Person.
+ * `pageType` picks the WebPage subtype where one exists (AboutPage, ContactPage,
+ * CollectionPage) — same node shape, more precise typing for answer engines.
+ */
 export function generateWebPageSchema(opts: {
   title: string
   description: string
   url: string
   datePublished?: string
   dateModified?: string
+  pageType?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage'
 }): SchemaNode {
   return {
-    '@type': 'WebPage',
+    '@type': opts.pageType ?? 'WebPage',
     '@id': `${opts.url}#webpage`,
     url: opts.url,
     name: opts.title,

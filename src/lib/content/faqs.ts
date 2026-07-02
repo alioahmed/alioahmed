@@ -39,3 +39,19 @@ export const FAQS: Faq[] = [
       'plus the product and go-to-market layer: he owns both the build and the business behind it.',
   },
 ]
+
+/** Contact-page Q&A (rendered on /contact + its FAQPage schema). */
+export const CONTACT_FAQS: Faq[] = [
+  {
+    question: 'Is Ali available for remote roles or relocation?',
+    answer:
+      'Both. He works remote-global today and is open to relocation — the Gulf (UAE, Saudi Arabia, ' +
+      'Qatar), the United States, Australia, and Canada are all on the table for the right seat.',
+  },
+  {
+    question: 'Does Ali take fractional or consulting engagements?',
+    answer:
+      'Yes — fractional AI-delivery engagements for founders and teams: scoping the problem, shipping ' +
+      'the LLM/RAG or agent product, and standing up the delivery process around it.',
+  },
+]

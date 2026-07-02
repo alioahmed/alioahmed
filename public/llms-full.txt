@@ -182,6 +182,194 @@ Knows about (expertise index): Large Language Models, Retrieval-Augmented Genera
   Stack: Hardware, Embedded
 
 
+## Case studies (deep dives)
+
+### Cognilium AI — Cognilium AI · AI products & growth
+  URL: https://alioahmed.com/work/cognilium
+  Role: AI Solutions Engineer (September 2024 – present) · production
+  At Cognilium AI, Ali Ahmed took four AI products from idea to production — Paralegent, VORTA, ProspectVox, and VectorHire — coded two production websites end-to-end, and built the firm’s growth engine, HR, and finance operations from zero, bringing in more than USD 50,000 in client value.
+  Metrics: 4 AI products in production · USD 50K+ client value from a growth engine built from zero · 2 production websites coded end-to-end · 5 functional buckets owned
+  Cognilium AI is a boutique AI engineering firm — generative AI, agentic systems, and custom AI products — founded in 2019 by Mudassir Marwat (Founder & CEO), with clients across the US, UAE, and Pakistan.
+  Ali joined in September 2024 and built, function by function, the commercial machine that turns an early-stage AI engineering firm into a company with shipped products, a growth engine, and operating discipline. Five buckets, one operator: products, brand and websites, growth, HR and team ops, and finance and compliance. He operates like a founder across every function except equity.
+  Four AI products, idea to production:
+  - Paralegent AI — agentic legal contract review: 18+ specialised AI agents plus an orchestrator, reviewing contracts against the customer’s own playbook. Cuts a Master Sales Agreement review from 30 hours to about 30 minutes. Deploys in the customer’s own cloud.
+  - VORTA — enterprise RAG assistant: 92% first-call resolution across 22 languages. Replaced a 24-person support team at the deploying client and delivered USD 400,000 in savings.
+  - ProspectVox — voice sales AI: A 5-stage AI agent workflow for outbound voice prospecting — 47% connect rate, from prospect identification through intelligent follow-up.
+  - VectorHire — AI recruitment: Four parallel AI agents evaluate every candidate simultaneously — resume quality, skill match, experience, and fit — cutting hiring time by 60%.
+  Two production websites, coded end-to-end:
+  Ali is not only the product owner — he coded the production platforms himself. Cognilium.ai: 76 page routes, 264 React components, 13 API routes, Sanity CMS, and a 34-script SEO/GEO automation toolkit — 251 commits over roughly nine months on Next.js, React, and TypeScript.
+  Paralegent.ai: 56 statically rendered pages, 50 components, and a 26-script SEO pipeline — 737 commits from January to June 2026, live and indexed. He also built a production Chrome extension for proposal automation that tripled the proposal response rate.
+  A growth engine from zero:
+  Customer acquisition did not exist when Ali arrived. He built it end-to-end: a research-driven Upwork strategy (the April 2026 profile rebuild traced every decision to one of 14 specific research findings), a 6-domain cold-email infrastructure with 30+ warmed sender accounts across three providers, handcrafted LinkedIn outreach to US decision-makers, 15+ AdTech companies researched and pursued, and a 19-section AI sales-agent playbook. Outcome: clients worth more than USD 50,000.
+  Operations: HR, finance & compliance:
+  The unglamorous machinery that makes a firm real — built from scratch:
+  - A 24-section staff policy manual and a 9-section employee NDA, authored end-to-end.
+  - A recruitment pipeline — job descriptions, interviews, offers — including hiring full-stack AI engineers.
+  - Trained a business-development intern into the role over three months, listed as his Team Lead.
+  - Banking, PSEB registration renewal, IT-export compliance, and international remittance management.
+  Q: What is Ali Ahmed’s role at Cognilium AI?
+  A: AI Solutions Engineer. Cognilium AI was founded in 2019 by Mudassir Marwat, its Founder & CEO; Ali joined in September 2024 and owns five functional buckets — products, brand and websites, growth engine, HR and team ops, and finance and compliance.
+  Q: Which AI products has Ali shipped at Cognilium?
+  A: Four, all idea-to-production: Paralegent AI (agentic legal contract review, live at paralegent.ai), VORTA (enterprise RAG, 92% first-call resolution), ProspectVox (voice sales AI, 47% connect rate), and VectorHire (AI recruitment, 60% faster hiring).
+  Q: Did Ali build the Cognilium websites too?
+  A: Yes — he coded both production sites end-to-end: cognilium.ai (76 pages, 264 React components, Sanity CMS) and paralegent.ai (56 pages, 737 commits), plus a production Chrome extension that tripled proposal response rates.
+
+### Paralegent AI — Cognilium AI · Agentic legal AI
+  URL: https://alioahmed.com/work/paralegent
+  Role: AI Product Manager · built the GTM site end-to-end (January 2026 – present) · production
+  Paralegent AI is an agentic contract-review accelerator that analyses contracts against a customer’s own playbook using 18+ specialised AI agents, returns GREEN, ORANGE, or RED redlines inside Microsoft Word in minutes, and deploys entirely in the customer’s own cloud. Ali Ahmed led the product from ideation through production and built its go-to-market website end-to-end.
+  Metrics: 18+ specialised AI agents + an orchestrator · 30 hrs → 30 min per Master Sales Agreement review · 2–8 min full analysis per contract · 56 pages in the GTM site Ali built
+  Most legal-AI tools are SaaS black boxes that ingest a customer’s most sensitive contracts into a vendor’s cloud. Paralegent AI was built as the structural opposite — it deploys inside the customer’s own environment, learns the customer’s own playbook (80–150 terms: preferred positions, fallback language, risk definitions) rather than a generic model’s opinion, and explains every call with a rationale, a suggested revision, and a confidence score.
+  A legal team uploads its playbook once. From then on, 18+ AI specialists plus an orchestrator — built on LangGraph and Google ADK, LLM-agnostic across Azure OpenAI, AWS Bedrock, and Google Vertex AI — review any contract against it: a 15–20 second match via 1536-dimensional semantic search, then a full GREEN/ORANGE/RED redline analysis in 2–8 minutes, natively inside a Microsoft Word add-in.
+  The proof points:
+  - Cuts a Master Sales Agreement review from roughly 30 hours to about 30 minutes, surfacing 40–50 findings per MSA.
+  - Three-tier risk classification — GREEN / ORANGE / RED — each with a suggested revision in the customer’s preferred language, a rationale, and a confidence score.
+  - Not SaaS: deploys in the customer’s own cloud, so contract data never leaves their environment. Typical implementation is 8–10 weeks.
+  - In go-to-market with paying clients under NDA.
+  Who builds it — and Ali’s lane:
+  Paralegent AI is a product of Cognilium AI (founded 2019 — 50+ projects delivered, 96% client satisfaction). Mudassir Marwat is its Founder & CEO. Ali’s claim is two-layered and precise: he is the AI Product Manager who led Paralegent from ideation through production, and he built its entire public proof surface — the go-to-market website — end-to-end.
+  The go-to-market site, by the numbers:
+  Everything a buyer sees at paralegent.ai, Ali shipped:
+  - 56 statically rendered pages on Next.js 15, React 19, TypeScript, and Tailwind — 737 commits from January to June 2026.
+  - 50 React components, 5 API routes, Sanity CMS with on-demand revalidation, and lead capture wired to Resend and Microsoft Bookings.
+  - A full AI-citation (GEO) stack — structured data on every page, robots.txt welcoming 18+ AI crawlers, llms.txt, IndexNow, and a 26-script SEO automation pipeline.
+  - Five head-to-head comparison pages (vs manual review, Spellbook, ChatGPT, Harvey, LegalOn) — with verified product stats only, and no fabricated social proof.
+  Q: Who built Paralegent AI?
+  A: Paralegent AI is a product of Cognilium AI. Mudassir Marwat is its Founder & CEO. Ali Ahmed is the AI Product Manager who led it from ideation through production, and he built the paralegent.ai go-to-market website end-to-end.
+  Q: Is Paralegent a SaaS product?
+  A: No. Paralegent deploys inside the customer’s own cloud — contract data never leaves their environment. It reviews contracts against the customer’s own playbook, not a generic model’s opinion.
+
+### Bijli Bachao — Bijli Bachao · Energy platforms
+  URL: https://alioahmed.com/work/bijli-bachao
+  Role: Head of Product & Platforms (October 2025 – present) · live
+  Ali Ahmed leads Bijli Bachao’s complete software stack: three production SaaS platforms covering Pakistan’s commercial energy lifecycle. Wattey monitors what a business pulls from the grid, Solar Performance Cloud monitors what its solar generates, and TenantBill handles multi-tenant billing. All three run real factories, solar plants, and shopping malls today — about 3 megawatts and growing.
+  Metrics: 3 production platforms live · ~1.04 GWh grid energy monitored by Wattey · 56 sites solar plants on Solar Performance Cloud · 74 tenants billed through TenantBill at one mall
+  BijliBachao.pk is Pakistan’s solar and energy-automation company, founded by Engr. Reyyan Niaz Khan — UET Lahore, 14+ years in Pakistan’s energy sector, and a pioneer of digital energy auditing in the country. Ali built the full platform stack for his company: one role, three platforms, one energy lifecycle.
+  The three platforms:
+  - Wattey — real-time IoT electricity monitoring: 22 smart meters live across 8 client sectors — hotels, textile, paper, dairy, malls — with ~1.04 GWh monitored since January 2026. Three-minute live refresh, Pakistan-specific seasonal time-of-use tariffs, automatic generator detection, and solar import/export tracking.
+    - ~500,000+ data points stored — voltage, current, power, energy, per phase
+    - 459 kW highest peak load recorded at a single site
+    - Multi-tenant dashboard: clients see only their own sites, 4 user roles
+  - Solar Performance Cloud — independent multi-brand solar monitoring: Pakistan’s first independent multi-brand solar performance platform: 56 sites, 70 inverters, and 698 PV strings tracked individually across 5 brands (Huawei, Solis, Growatt, Sungrow, Canadian Solar) — 785 MWh tracked, 3.7 million+ readings, no hardware required.
+    - Every string graded daily to the IEC 61724-1 performance-availability split
+    - Fault diagnosis that names the issue: dust, shading, dead panel, sensor fault
+    - Caught a 50% generation loss on one rooftop and a 33% loss at a mall the owner never knew about
+  - TenantBill by Wattey — photo-verified OCR billing: Live at Mall of Muridke: 74 tenants, 469 meters, and 545 shops across 8 floor categories, every reading photo-verified and extracted by OCR at 85–95% confidence in under 2 seconds. A monthly billing cycle that took 15 days now takes 3 hours.
+    - Month-close with frozen snapshots and a full audit trail
+    - 95% error reduction, 80% faster invoicing, 70% fewer tenant complaints
+    - 3 weeks from signed contract to live operation
+  How it’s built — the engineering moat:
+  All three platforms share the same discipline, applied to Pakistani energy software from day one:
+  - International standards: IEC 61724-1 health scoring and IEC 62446-1 five-state string classification — what utility-scale operators use globally.
+  - Multi-tenant SaaS architecture with org-scoped data isolation and role-based access control, the way enterprise buyers expect SaaS to be built.
+  - An observability baseline — error tracking, hourly system-health audits, health endpoints — plus enterprise-readiness audits across the suite.
+  - Operator-handover discipline: runbooks, audit reports, and change logs, so the software is maintainable by any competent operator, not dependent on its builder.
+  Who runs on it:
+  These are the platforms’ production clients — real Pakistani businesses: Lahore Continental Hotel, Mall of Mureedkay, Al Haram Paper Mill, FANZ Mills, Amna Dyeing & Finishing, Qadir Engineering, Zahoor Dairy Farm, and commercial sites in Gulberg, Lahore. Ali is the builder and Head of Product; operations stay with the BijliBachao team.
+  Q: Are the Bijli Bachao platforms actually live?
+  A: Yes — all three run in production today. Wattey has monitored ~1.04 GWh across 22 smart meters since January 2026, Solar Performance Cloud tracks 56 solar sites with 3.7 million+ readings, and TenantBill generates real invoices at Mall of Muridke every month.
+  Q: What standards are they built to?
+  A: Solar Performance Cloud ships IEC 61724-1 performance-availability health scoring and IEC 62446-1 five-state string classification — the international engineering standards used by utility-scale solar operators — and all three platforms share multi-tenant, role-based enterprise SaaS architecture.
+  Q: What is Ali Ahmed’s role at Bijli Bachao?
+  A: Head of Product & Platforms, since October 2025. He designed and built the three platforms and the company website; BijliBachao was founded by Engr. Reyyan Niaz Khan, and daily operations stay with the BijliBachao team.
+
+### Wonder Women — Wonder Women · Founder chapter
+  URL: https://alioahmed.com/work/wonder-women
+  Role: Co-Founder & Head of Product (May 2022 – October 2024) · concluded
+  Wonder Women is the FemTech startup Ali Ahmed co-founded in Lahore: it built Asani, Pakistan’s first locally-assembled sanitary-pad vending machine, deployed 29 machines across 24 locations, completed 75,000+ transactions, reached PKR 3.7 million revenue in its first twelve months, closed a Procter & Gamble partnership, and won the HEC Innovator Seed Fund.
+  Metrics: 29 machines across 24 locations · 75,000+ transactions completed · PKR 3.7M revenue in the first 12 months · USD 35K HEC Innovator Seed Fund won
+  Asani is Pakistan’s first locally-assembled wall-mounted sanitary-napkin vending machine — installed in female restrooms at universities, offices, and hospitals, taking cash, employee PIN, or app payment. Built at roughly one-tenth the cost of imported alternatives, with production capacity of ten machines a week.
+  Ali joined as Co-Founder & Head of Product in May 2022 and owned the product end-to-end: hardware design and manufacturing oversight, the Asani mobile app, the multi-tenant partner portal, enterprise sales, pricing, and grant proposals — alongside co-founder Ayesha Haroon, whose campus period-emergency in 2019 sparked the original concept.
+  In a country where one in three girls drops out of school on reaching puberty, the mission carried the product: access, dignity, and a stigma dismantled one restroom at a time.
+  The signature deal: closing Procter & Gamble:
+  In July 2022, Ali closed the #AlwaysAsani partnership with Procter & Gamble — a multinational FMCG giant partnering with a Pakistani FemTech startup. P&G covered 53% of upfront machine cost with a 70-machine pipeline planned; Ali negotiated the 12-month exclusivity down to a partial-exclusivity carve-out, keeping Wonder Women free to pursue other corporate clients while preserving the co-branding for educational institutions. A young co-founder holding that line across the table from a multinational is the moment the operator instinct shows.
+  The delivery obsession showed elsewhere too: when a machine at Aga Khan University Hospital in Karachi developed a manufacturing fault, Ali flew Lahore to Karachi with the replacement part and fixed it on-site.
+  Deployments & partners:
+  Machines ran at LUMS, UCP, FAST-NUCES, FCCU, GCU, and a dozen more institutions — with enterprise partners including:
+  - Always (P&G) — the #AlwaysAsani campaign partner.
+  - Aga Khan University Hospital — 6 machines, the largest single deployment.
+  - Engro, Sapphire (three sites), NETSOL, Devsinc, Arbisoft, Superior University, and The Learning Hub Gujranwala.
+  Recognition:
+  Five national and international wins, plus 21+ national media features:
+  - HEC Innovator Seed Fund — USD 35,000, one of 15 winners from 186 applicants (2022).
+  - Entrepreneurship World Cup — Top 100 Global Startups (2021).
+  - Falling Walls Lab — Pakistan Winner.
+  - Bahria Innovation Challenge — 1st place; SheLovesTech — Regional Competition Winner.
+  - Covered by ProPakistani, The Express Tribune, Pakistan Today, Daily Pakistan, and more — with social recognition from the US Consulate Lahore.
+  The pivot: hardware to digital health:
+  In late 2023 the company expanded from hardware into digital health, focused on PCOS — which affects an estimated 52% of Pakistani women. Ali shipped Pakistan’s first PCOS self-assessment tool (a personalised risk score in under three minutes), a moderated clinical community, and three structured care programs. His tenure concluded in October 2024.
+  Q: What was Ali Ahmed’s role at Wonder Women?
+  A: Co-Founder & Head of Product, May 2022 to October 2024. He owned the product end-to-end — the Asani hardware, the mobile app and partner portal, enterprise sales, and grant fundraising.
+  Q: What recognition did Wonder Women win?
+  A: The HEC Innovator Seed Fund (USD 35,000 — 1 of 15 from 186 applicants), a Top 100 Global Startups placing at the Entrepreneurship World Cup 2021, Falling Walls Lab Pakistan, 1st place at the Bahria Innovation Challenge, and a SheLovesTech regional win — plus 21+ national media features.
+
+### Startup ecosystem at national scale — ID92 · EWC · SEE Pakistan
+  URL: https://alioahmed.com/work/startup-ecosystem
+  Role: Head of Business Development (Startups), Innovation District 92 (February 2021 – February 2023) · concluded
+  Ali Ahmed spent two years running Pakistan’s startup ecosystem at national scale: Country Host and National Organiser of the Entrepreneurship World Cup Pakistan for two consecutive years, Team Lead of the SEE Pakistan National Startup Championship 2022, and Head of Business Development at Innovation District 92, the startup incubation centre of Superior University.
+  Metrics: 5,000+ EWC Pakistan applicants (2021) · 1,500+ startups engaged, SEE Pakistan 2022 · 81 cities reached across 5 provinces · 25,000+ attendees at the Expo Center Lahore finale
+  Innovation District 92 is where Ali moved from multi-role operator to national-scale ecosystem builder. The base job: make Superior University’s incubation engine produce viable businesses — working founder-by-founder on proposals and progress, building a mentor network from scratch, establishing 15+ strategic partnerships, and running 20+ workshops. Outcome: a 30% increase in successful incubation outcomes.
+  The headline is what he ran on top of that — two national startup competitions, back-to-back, at 24–25 years old: work most institutions hand to teams of ten or more.
+  Entrepreneurship World Cup Pakistan — Country Host, 2021 & 2022:
+  The EWC is the Global Entrepreneurship Network’s worldwide pitch competition. Ali ran Pakistan’s national programme for two consecutive years, owning the full value chain:
+  - 5,000+ applicants in 2021 — 700+ applications in the first two weeks of the nationwide campaign.
+  - 100 startups shortlisted, 40 judges coordinated nationwide for the semi-finals.
+  - National Finals at Arfa Software Technology Park — 16 top startups competing, the top 3 advancing to the international stage.
+  SEE Pakistan 2022 — National Startup Championship, Team Lead:
+  The Social Enterprise Expo, powered by APSUP (the Association of Private Sector Universities of Pakistan) — the larger of the two competitions:
+  - 1,500+ startups engaged from 81 cities, 5 provinces, 129 universities, and 30 incubation centres.
+  - Seven regional semi-finals — Lahore, Peshawar, Islamabad, Karachi, Multan, Faisalabad, Quetta — each a standalone event with its own venue, judges, and logistics.
+  - Grand finale at Expo Center Lahore: 100 startups showcased expo-style in front of 25,000+ attendees.
+  - 16 community partnerships, 7 venue partners, 4 knowledge partners, and 40+ judges across rounds.
+  The network compounds:
+  - UNIDO PAIDAR — the room this network built: Three years later, the UN’s industrial development agency needed Pakistan’s startup elite in one room for an EU-funded programme. Working via Digitara, Ali assembled it in 9 days with zero budget: Fiza Farhan on keynote, five panelists, and 70+ founders and CEOs in attendance across Karachi and Lahore events.
+  - Both sides of the table: Ali has judged the ecosystem as an organiser and won in it as a founder — Wonder Women placed Top 100 Global Startups at the very competition network he later hosted nationally.
+  Q: What is the Entrepreneurship World Cup, and what was Ali’s role?
+  A: The Entrepreneurship World Cup is a global pitch competition run by the Global Entrepreneurship Network. Ali was Country Host / National Organiser for Pakistan in 2021 and 2022 — 5,000+ applicants, 40 judges, and National Finals at Arfa Software Technology Park.
+  Q: What was SEE Pakistan 2022?
+  A: The Social Enterprise Expo’s National Startup Championship, powered by APSUP. As Team Lead & Project Manager, Ali ran a campaign reaching 1,500+ startups across 81 cities and 5 provinces, seven regional semi-finals, and a grand finale at Expo Center Lahore with 25,000+ attendees.
+  Q: Does Ali still work with startup ecosystems?
+  A: Yes — the network never stopped compounding. In 2026 he mobilised 70+ founders and CEOs for a UNIDO programme funded by the European Union, and he consults for founders building AI products today.
+
+### CIRCLE × the Gates Foundation — CIRCLE · Gates Foundation–backed
+  URL: https://alioahmed.com/work/circle-gates
+  Role: Program Manager & Business Intelligence Lead (February 2023 – October 2023) · concluded
+  At CIRCLE Women Association, Ali Ahmed ran the Digital Literacy Program funded by the Bill & Melinda Gates Foundation — training 10,000 women in digital, financial, business, and life skills over eight months — and built the Power BI system that measured it, cutting reporting time by 40%. The system kept running after he left.
+  Metrics: 10,000 women trained during his tenure · −40% reporting time after the BI rebuild · 25% increase in online business ventures · 8 months to a permanent operational upgrade
+  A Gates Foundation programme does not run on good intentions — it runs on proof. Every claim backed by data, every outcome measurable, every process documented against the foundation’s impact-measurement standards.
+  CIRCLE Women Association — founded and led by Sadaffe Abid, serving women across Pakistan — was the implementing partner for the foundation-funded Digital Literacy Program. Ali ran it end-to-end: scope, timelines, KPIs defined around outcomes rather than activity (skill acquisition, income generation, businesses actually created), and stakeholder management spanning grassroots community organisations and a data-driven global foundation.
+  Programme delivery:
+  - 10,000 women trained in digital literacy, financial literacy, business, and life skills during his tenure.
+  - A reported 25% increase in online business ventures among participants.
+  - KPIs set against the Gates Foundation’s impact-measurement standards from day one — outcomes, not sessions held.
+  - Multi-stakeholder delivery managed across beneficiaries, CIRCLE teams, training partners, and the funder’s monitoring framework.
+  The BI system that outlasted the operator:
+  When Ali arrived, impact was measured by hand — paper forms, spreadsheets, delayed reports. He replaced it with automated Power BI dashboards giving CIRCLE leadership and the funder’s monitoring team real-time visibility into enrollment, completion, skill scores, and business-creation outcomes — plus the data pipelines feeding them and the reporting SOPs that made it repeatable. Reporting time fell 40%; resource allocation improved 20%.
+  The stack — Power BI, SQL, Google Sheets automation — was chosen deliberately so CIRCLE’s own team could maintain it without him. The dashboards kept running after he left. The infrastructure outlasted the operator; eight months produced a permanent upgrade.
+  Q: Did Ali Ahmed work at the Gates Foundation?
+  A: No — and he never claims to. The Bill & Melinda Gates Foundation funded the Digital Literacy Program; CIRCLE Women Association implemented it; Ali was CIRCLE’s Program Manager & Business Intelligence Lead. The honest framing: trusted to deliver a Gates Foundation–backed programme.
+  Q: What happened to the BI system after he left?
+  A: It kept running. Ali deliberately built on tools CIRCLE’s own team could maintain — Power BI, SQL, and Google Sheets automation — and documented the reporting workflows as standard operating procedure, so the dashboards and pipelines survived his departure.
+
+### Build Buy Software — Independent venture · Legal tech
+  URL: https://alioahmed.com/work/build-buy-software
+  Role: Product & Editorial Lead (May 2026 – present) · pre-launch
+  Build Buy Software is an independent directory of 420 legal-technology products, each scored by a published, unbuyable formula. Ali Ahmed built it end-to-end — the product, the data model, the scoring methodology, roughly 2,000 pages, and the quality gate that fails the build on any editorial violation. It is currently pre-launch.
+  Metrics: 420 products across 10 categories · 387 vendors in the directory · ~2,000 statically generated pages · 27 published, DB-verified articles
+  The incumbent legal-tech directory ranks products with an unexplained black box. Build Buy Software was built as the structural opposite: the BBS Score is a 0–100 formula with published weights, computed from public evidence only — and it is unbuyable. Sponsorship appears in zero ranking queries; paid placement cannot touch a score.
+  Built like a data product, not a listicle:
+  - Provenance fields on every product, and figure re-verification after every data change — 27 published articles in which every statistic is computed from the database itself.
+  - A State of Legal Tech 2026 report (plus generated PDF) computed live from the directory’s own data, and a 48-prompt legal-AI prompt library.
+  - A CI quality gate that fails the build on hype vocabulary or editorial violations.
+  - Strategy grounded in a 20-track, adversarially-verified research program.
+  Where it sits in the story:
+  Ali is Product & Editorial Lead: he directs the product and bylines its data-analysis articles. The credibility hook is earned, not claimed — he previously led product on Paralegent AI, so the directory’s analysis of the legal-AI market comes from someone who has actually built in it. The venture is pre-launch: built, content-complete, and verified on a private preview, with the domain decided but not yet live.
+  Q: Is Build Buy Software live?
+  A: Not yet — it is pre-launch. The product is built and content-complete on a private preview: 420 products, ~2,000 statically generated pages, and 27 published analyses, with the domain decided and launch pending.
+  Q: Who is behind Build Buy Software?
+  A: Ali Ahmed is its Product & Editorial Lead — he built the directory end-to-end and bylines its data-analysis articles. The directory is independent, and its credibility rests on data methodology, not legal practice.
+
+
 ## Institutional trust (the names behind the work)
 
 - Bill & Melinda Gates Foundation: Trusted to deliver a Gates Foundation–backed programme (via CIRCLE).

@@ -7,7 +7,19 @@
 > Based in Lahore, Pakistan; open to remote-global roles and relocation to the Gulf, US, or Australia.
 
 ## Core pages
-- [Home](https://alioahmed.com/): Overview and contact
+- [Home](https://alioahmed.com/): Who Ali Ahmed is — identity, proof figures, FAQ
+- [Work](https://alioahmed.com/work): Everything shipped — case studies + the portfolio table
+- [About](https://alioahmed.com/about): Full biography, year-by-year timeline, availability
+- [Contact](https://alioahmed.com/contact): How to reach Ali — email, WhatsApp, socials
+
+## Case studies
+- [Cognilium AI](https://alioahmed.com/work/cognilium): 4 AI products idea-to-production + growth engine
+- [Paralegent AI](https://alioahmed.com/work/paralegent): 18+ agent legal contract review, 30 hrs → 30 min
+- [Bijli Bachao](https://alioahmed.com/work/bijli-bachao): 3 live IoT energy platforms, IEC standards
+- [Wonder Women](https://alioahmed.com/work/wonder-women): Co-founded FemTech — Asani, P&G, HEC grant
+- [Startup ecosystem](https://alioahmed.com/work/startup-ecosystem): EWC Pakistan + SEE Pakistan at national scale
+- [CIRCLE × Gates Foundation](https://alioahmed.com/work/circle-gates): 10,000 women trained + the BI system
+- [Build Buy Software](https://alioahmed.com/work/build-buy-software): Independent legal-tech directory (pre-launch)
 
 ## Profiles
 - LinkedIn: https://www.linkedin.com/in/alioahmed/
